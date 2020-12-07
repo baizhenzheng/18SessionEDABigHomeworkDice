@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="homework">
+		<CBX_INST_ENTRY INSTANCE_NAME="|Block1|flag:inst19|lpm_divide:Mod0" CBX_FILE_NAME="lpm_divide_15m.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Block1|flag:inst9|lpm_divide:Mod0" CBX_FILE_NAME="lpm_divide_15m.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

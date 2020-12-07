@@ -1,0 +1,590 @@
+Analysis & Synthesis report for homework
+Sat Dec 05 16:08:50 2020
+Quartus II Version 8.0 Build 215 05/29/2008 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. State Machine - |Block1|homework:inst|state1
+  8. State Machine - |Block1|homework:inst|state
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Parameter Settings for User Entity Instance: led:inst21
+ 15. Parameter Settings for User Entity Instance: homework:inst
+ 16. Parameter Settings for Inferred Entity Instance: flag:inst9|lpm_divide:Mod0
+ 17. Parameter Settings for Inferred Entity Instance: flag:inst19|lpm_divide:Mod0
+ 18. Analysis & Synthesis Messages
+ 19. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2008 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++------------------------------------+------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sat Dec 05 16:08:50 2020    ;
+; Quartus II Version                 ; 8.0 Build 215 05/29/2008 SJ Full Version ;
+; Revision Name                      ; homework                                 ;
+; Top-level Entity Name              ; Block1                                   ;
+; Family                             ; Cyclone II                               ;
+; Total logic elements               ; 255                                      ;
+;     Total combinational functions  ; 255                                      ;
+;     Dedicated logic registers      ; 147                                      ;
+; Total registers                    ; 147                                      ;
+; Total pins                         ; 68                                       ;
+; Total virtual pins                 ; 0                                        ;
+; Total memory bits                  ; 0                                        ;
+; Embedded Multiplier 9-bit elements ; 0                                        ;
+; Total PLLs                         ; 0                                        ;
++------------------------------------+------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                          ;
++--------------------------------------------------------------+--------------------+--------------------+
+; Option                                                       ; Setting            ; Default Value      ;
++--------------------------------------------------------------+--------------------+--------------------+
+; Device                                                       ; EP2C35F672C6       ;                    ;
+; Top-level entity name                                        ; Block1             ; homework           ;
+; Family name                                                  ; Cyclone II         ; Stratix II         ;
+; Use Generated Physical Constraints File                      ; Off                ;                    ;
+; Use smart compilation                                        ; Off                ; Off                ;
+; Maximum processors allowed for parallel compilation          ; 1                  ; 1                  ;
+; Restructure Multiplexers                                     ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                          ; Off                ; Off                ;
+; Preserve fewer node names                                    ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                    ; Off                ; Off                ;
+; Verilog Version                                              ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                 ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                     ; Auto               ; Auto               ;
+; Safe State Machine                                           ; Off                ; Off                ;
+; Extract Verilog State Machines                               ; On                 ; On                 ;
+; Extract VHDL State Machines                                  ; On                 ; On                 ;
+; Ignore Verilog initial constructs                            ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                   ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops               ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                      ; On                 ; On                 ;
+; Parallel Synthesis                                           ; Off                ; Off                ;
+; DSP Block Balancing                                          ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                           ; On                 ; On                 ;
+; Power-Up Don't Care                                          ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                 ; Off                ; Off                ;
+; Remove Duplicate Registers                                   ; On                 ; On                 ;
+; Ignore CARRY Buffers                                         ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                       ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                    ; Off                ; Off                ;
+; Ignore LCELL Buffers                                         ; Off                ; Off                ;
+; Ignore SOFT Buffers                                          ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                               ; Off                ; Off                ;
+; Optimization Technique                                       ; Balanced           ; Balanced           ;
+; Carry Chain Length                                           ; 70                 ; 70                 ;
+; Auto Carry Chains                                            ; On                 ; On                 ;
+; Auto Open-Drain Pins                                         ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                        ; Off                ; Off                ;
+; Perform gate-level register retiming                         ; Off                ; Off                ;
+; Allow register retiming to trade off Tsu/Tco with Fmax       ; On                 ; On                 ;
+; Auto ROM Replacement                                         ; On                 ; On                 ;
+; Auto RAM Replacement                                         ; On                 ; On                 ;
+; Auto Shift Register Replacement                              ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                ; On                 ; On                 ;
+; Strict RAM Replacement                                       ; Off                ; Off                ;
+; Allow Synchronous Control Signals                            ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                       ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                            ; Off                ; Off                ;
+; Auto Resource Sharing                                        ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                           ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                           ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                ; Off                ; Off                ;
+; Ignore translate_off and synthesis_off directives            ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report           ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                           ; Off                ; Off                ;
+; Synchronization Register Chain Length                        ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                 ; Normal compilation ; Normal compilation ;
+; HDL message level                                            ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages              ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report     ; 100                ; 100                ;
+; Number of Inverted Registers Reported in Synthesis Report    ; 100                ; 100                ;
+; Clock MUX Protection                                         ; On                 ; On                 ;
+; Block Design Naming                                          ; Auto               ; Auto               ;
+; SDC constraint protection                                    ; Off                ; Off                ;
+; Synthesis Effort                                             ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal ; On                 ; On                 ;
++--------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                     ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                     ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------+
+; homework.v                       ; yes             ; User Verilog HDL File              ; F:/EDA/home/bigHomework/bigHomework/homework.v                   ;
+; calculator.v                     ; yes             ; User Verilog HDL File              ; F:/EDA/home/bigHomework/bigHomework/calculator.v                 ;
+; yima.v                           ; yes             ; User Verilog HDL File              ; F:/EDA/home/bigHomework/bigHomework/yima.v                       ;
+; Block1.bdf                       ; yes             ; User Block Diagram/Schematic File  ; F:/EDA/home/bigHomework/bigHomework/Block1.bdf                   ;
+; flag.v                           ; yes             ; User Verilog HDL File              ; F:/EDA/home/bigHomework/bigHomework/flag.v                       ;
+; led.v                            ; yes             ; User Verilog HDL File              ; F:/EDA/home/bigHomework/bigHomework/led.v                        ;
+; fenpin100.v                      ; yes             ; Other                              ; F:/EDA/home/bigHomework/bigHomework/fenpin100.v                  ;
+; fenpin10.v                       ; yes             ; Other                              ; F:/EDA/home/bigHomework/bigHomework/fenpin10.v                   ;
+; fenpin50.v                       ; yes             ; Other                              ; F:/EDA/home/bigHomework/bigHomework/fenpin50.v                   ;
+; qudou.v                          ; yes             ; Other                              ; F:/EDA/home/bigHomework/bigHomework/qudou.v                      ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                       ; c:/altera/80/quartus/libraries/megafunctions/lpm_divide.tdf      ;
+; abs_divider.inc                  ; yes             ; Megafunction                       ; c:/altera/80/quartus/libraries/megafunctions/abs_divider.inc     ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                       ; c:/altera/80/quartus/libraries/megafunctions/sign_div_unsign.inc ;
+; aglobal80.inc                    ; yes             ; Megafunction                       ; c:/altera/80/quartus/libraries/megafunctions/aglobal80.inc       ;
+; db/lpm_divide_15m.tdf            ; yes             ; Auto-Generated Megafunction        ; F:/EDA/home/bigHomework/bigHomework/db/lpm_divide_15m.tdf        ;
+; db/sign_div_unsign_8kh.tdf       ; yes             ; Auto-Generated Megafunction        ; F:/EDA/home/bigHomework/bigHomework/db/sign_div_unsign_8kh.tdf   ;
+; db/alt_u_div_ive.tdf             ; yes             ; Auto-Generated Megafunction        ; F:/EDA/home/bigHomework/bigHomework/db/alt_u_div_ive.tdf         ;
+; db/add_sub_lkc.tdf               ; yes             ; Auto-Generated Megafunction        ; F:/EDA/home/bigHomework/bigHomework/db/add_sub_lkc.tdf           ;
+; db/add_sub_mkc.tdf               ; yes             ; Auto-Generated Megafunction        ; F:/EDA/home/bigHomework/bigHomework/db/add_sub_mkc.tdf           ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 255   ;
+;                                             ;       ;
+; Total combinational functions               ; 255   ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 131   ;
+;     -- 3 input functions                    ; 41    ;
+;     -- <=2 input functions                  ; 83    ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 214   ;
+;     -- arithmetic mode                      ; 41    ;
+;                                             ;       ;
+; Total registers                             ; 147   ;
+;     -- Dedicated logic registers            ; 147   ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 68    ;
+; Maximum fan-out node                        ; clkin ;
+; Maximum fan-out                             ; 52    ;
+; Total fan-out                               ; 1200  ;
+; Average fan-out                             ; 2.55  ;
++---------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                        ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                 ; Library Name ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------+--------------+
+; |Block1                                   ; 255 (0)           ; 147 (0)      ; 0           ; 0            ; 0       ; 0         ; 68   ; 0            ; |Block1                                                                                                             ; work         ;
+;    |calculator:inst11|                    ; 4 (4)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Block1|calculator:inst11                                                                                           ; work         ;
+;    |fenpin100:inst1|                      ; 14 (14)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Block1|fenpin100:inst1                                                                                             ; work         ;
+;    |fenpin100:inst2|                      ; 14 (14)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Block1|fenpin100:inst2                                                                                             ; work         ;
+;    |fenpin10:inst4|                       ; 4 (4)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Block1|fenpin10:inst4                                                                                              ; work         ;
+;    |fenpin10:inst5|                       ; 4 (4)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Block1|fenpin10:inst5                                                                                              ; work         ;
+;    |fenpin50:inst3|                       ; 11 (11)           ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Block1|fenpin50:inst3                                                                                              ; work         ;
+;    |flag:inst19|                          ; 23 (6)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Block1|flag:inst19                                                                                                 ; work         ;
+;       |lpm_divide:Mod0|                   ; 17 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Block1|flag:inst19|lpm_divide:Mod0                                                                                 ; work         ;
+;          |lpm_divide_15m:auto_generated|  ; 17 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Block1|flag:inst19|lpm_divide:Mod0|lpm_divide_15m:auto_generated                                                   ; work         ;
+;             |sign_div_unsign_8kh:divider| ; 17 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Block1|flag:inst19|lpm_divide:Mod0|lpm_divide_15m:auto_generated|sign_div_unsign_8kh:divider                       ; work         ;
+;                |alt_u_div_ive:divider|    ; 17 (17)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Block1|flag:inst19|lpm_divide:Mod0|lpm_divide_15m:auto_generated|sign_div_unsign_8kh:divider|alt_u_div_ive:divider ; work         ;
+;    |flag:inst9|                           ; 23 (6)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Block1|flag:inst9                                                                                                  ; work         ;
+;       |lpm_divide:Mod0|                   ; 17 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Block1|flag:inst9|lpm_divide:Mod0                                                                                  ; work         ;
+;          |lpm_divide_15m:auto_generated|  ; 17 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Block1|flag:inst9|lpm_divide:Mod0|lpm_divide_15m:auto_generated                                                    ; work         ;
+;             |sign_div_unsign_8kh:divider| ; 17 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Block1|flag:inst9|lpm_divide:Mod0|lpm_divide_15m:auto_generated|sign_div_unsign_8kh:divider                        ; work         ;
+;                |alt_u_div_ive:divider|    ; 17 (17)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Block1|flag:inst9|lpm_divide:Mod0|lpm_divide_15m:auto_generated|sign_div_unsign_8kh:divider|alt_u_div_ive:divider  ; work         ;
+;    |homework:inst|                        ; 75 (75)           ; 39 (39)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Block1|homework:inst                                                                                               ; work         ;
+;    |led:inst21|                           ; 20 (20)           ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Block1|led:inst21                                                                                                  ; work         ;
+;    |qudou:inst16|                         ; 7 (7)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Block1|qudou:inst16                                                                                                ; work         ;
+;    |qudou:inst17|                         ; 7 (7)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Block1|qudou:inst17                                                                                                ; work         ;
+;    |qudou:inst6|                          ; 7 (7)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Block1|qudou:inst6                                                                                                 ; work         ;
+;    |yima:inst10|                          ; 7 (7)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Block1|yima:inst10                                                                                                 ; work         ;
+;    |yima:inst12|                          ; 7 (7)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Block1|yima:inst12                                                                                                 ; work         ;
+;    |yima:inst13|                          ; 7 (7)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Block1|yima:inst13                                                                                                 ; work         ;
+;    |yima:inst14|                          ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Block1|yima:inst14                                                                                                 ; work         ;
+;    |yima:inst15|                          ; 7 (7)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Block1|yima:inst15                                                                                                 ; work         ;
+;    |yima:inst18|                          ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Block1|yima:inst18                                                                                                 ; work         ;
+;    |yima:inst7|                           ; 7 (7)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Block1|yima:inst7                                                                                                  ; work         ;
+;    |yima:inst8|                           ; 7 (7)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Block1|yima:inst8                                                                                                  ; work         ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------+
+; State Machine - |Block1|homework:inst|state1                          ;
++-----------+-----------+-----------+-----------+-----------+-----------+
+; Name      ; state1.s9 ; state1.s8 ; state1.s7 ; state1.s6 ; state1.s5 ;
++-----------+-----------+-----------+-----------+-----------+-----------+
+; state1.s5 ; 0         ; 0         ; 0         ; 0         ; 0         ;
+; state1.s6 ; 0         ; 0         ; 0         ; 1         ; 1         ;
+; state1.s7 ; 0         ; 0         ; 1         ; 0         ; 1         ;
+; state1.s8 ; 0         ; 1         ; 0         ; 0         ; 1         ;
+; state1.s9 ; 1         ; 0         ; 0         ; 0         ; 1         ;
++-----------+-----------+-----------+-----------+-----------+-----------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------+
+; State Machine - |Block1|homework:inst|state                     ;
++----------+----------+----------+----------+----------+----------+
+; Name     ; state.s3 ; state.s2 ; state.s1 ; state.s0 ; state.s4 ;
++----------+----------+----------+----------+----------+----------+
+; state.s0 ; 0        ; 0        ; 0        ; 0        ; 0        ;
+; state.s1 ; 0        ; 0        ; 1        ; 1        ; 0        ;
+; state.s2 ; 0        ; 1        ; 0        ; 1        ; 0        ;
+; state.s3 ; 1        ; 0        ; 0        ; 1        ; 0        ;
+; state.s4 ; 0        ; 0        ; 0        ; 1        ; 1        ;
++----------+----------+----------+----------+----------+----------+
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; yima:inst14|out[4]                     ; Stuck at GND due to stuck port data_in ;
+; yima:inst18|out[4]                     ; Stuck at GND due to stuck port data_in ;
+; yima:inst14|out[5]                     ; Stuck at GND due to stuck port data_in ;
+; yima:inst14|out[0]                     ; Stuck at VCC due to stuck port data_in ;
+; yima:inst18|out[5]                     ; Stuck at GND due to stuck port data_in ;
+; yima:inst18|out[0]                     ; Stuck at VCC due to stuck port data_in ;
+; yima:inst14|out[1..3]                  ; Merged with yima:inst14|out[6]         ;
+; yima:inst18|out[1..3]                  ; Merged with yima:inst18|out[6]         ;
+; homework:inst|win[2]                   ; Stuck at GND due to stuck port data_in ;
+; homework:inst|state1~218               ; Lost fanout                            ;
+; homework:inst|state1~219               ; Lost fanout                            ;
+; homework:inst|state1~220               ; Lost fanout                            ;
+; homework:inst|state1~221               ; Lost fanout                            ;
+; homework:inst|state1~222               ; Lost fanout                            ;
+; homework:inst|state~111                ; Lost fanout                            ;
+; homework:inst|state~112                ; Lost fanout                            ;
+; homework:inst|state~114                ; Lost fanout                            ;
+; homework:inst|state~115                ; Lost fanout                            ;
+; led:inst21|ledstate[4]                 ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 23 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++-------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                               ;
++----------------------+---------------------------+----------------------------------------+
+; Register name        ; Reason for Removal        ; Registers Removed due to This Register ;
++----------------------+---------------------------+----------------------------------------+
+; homework:inst|win[2] ; Stuck at GND              ; led:inst21|ledstate[4]                 ;
+;                      ; due to stuck port data_in ;                                        ;
++----------------------+---------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 147   ;
+; Number of registers using Synchronous Clear  ; 10    ;
+; Number of registers using Synchronous Load   ; 1     ;
+; Number of registers using Asynchronous Clear ; 4     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 36    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; calculator:inst11|count[0]             ; 5       ;
+; Total number of inverted registers = 1 ;         ;
++----------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |Block1|qudou:inst17|count[3]    ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |Block1|qudou:inst16|count[0]    ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |Block1|qudou:inst6|count[0]     ;
+; 32:1               ; 8 bits    ; 168 LEs       ; 48 LEs               ; 120 LEs                ; Yes        ; |Block1|led:inst21|led[4]        ;
+; 6:1                ; 5 bits    ; 20 LEs        ; 15 LEs               ; 5 LEs                  ; Yes        ; |Block1|led:inst21|ledstate[0]   ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |Block1|homework:inst|scorea1[3] ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |Block1|homework:inst|scorea2[1] ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |Block1|homework:inst|scoreb1[0] ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |Block1|homework:inst|scoreb2[3] ;
+; 10:1               ; 10 bits   ; 60 LEs        ; 10 LEs               ; 50 LEs                 ; Yes        ; |Block1|homework:inst|suma[4]    ;
+; 13:1               ; 3 bits    ; 24 LEs        ; 18 LEs               ; 6 LEs                  ; Yes        ; |Block1|homework:inst|win[2]     ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |Block1|homework:inst|state~22   ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |Block1|homework:inst|state~23   ;
+; 14:1               ; 2 bits    ; 18 LEs        ; 8 LEs                ; 10 LEs                 ; No         ; |Block1|homework:inst|state1~45  ;
+; 14:1               ; 2 bits    ; 18 LEs        ; 8 LEs                ; 10 LEs                 ; No         ; |Block1|homework:inst|state1~48  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: led:inst21 ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; S0             ; 0001  ; Unsigned Binary                ;
+; S1             ; 0010  ; Unsigned Binary                ;
+; S2             ; 0011  ; Unsigned Binary                ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: homework:inst ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; s0             ; 0000  ; Unsigned Binary                   ;
+; s1             ; 0001  ; Unsigned Binary                   ;
+; s2             ; 0010  ; Unsigned Binary                   ;
+; s3             ; 0011  ; Unsigned Binary                   ;
+; s4             ; 0100  ; Unsigned Binary                   ;
+; s5             ; 0101  ; Unsigned Binary                   ;
+; s6             ; 0110  ; Unsigned Binary                   ;
+; s7             ; 0111  ; Unsigned Binary                   ;
+; s8             ; 1000  ; Unsigned Binary                   ;
+; s9             ; 1001  ; Unsigned Binary                   ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: flag:inst9|lpm_divide:Mod0 ;
++------------------------+----------------+-----------------------------------+
+; Parameter Name         ; Value          ; Type                              ;
++------------------------+----------------+-----------------------------------+
+; LPM_WIDTHN             ; 5              ; Untyped                           ;
+; LPM_WIDTHD             ; 4              ; Untyped                           ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                           ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                           ;
+; LPM_PIPELINE           ; 0              ; Untyped                           ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                           ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                           ;
+; CBXI_PARAMETER         ; lpm_divide_15m ; Untyped                           ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                           ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                           ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                        ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                      ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                      ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                    ;
++------------------------+----------------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: flag:inst19|lpm_divide:Mod0 ;
++------------------------+----------------+------------------------------------+
+; Parameter Name         ; Value          ; Type                               ;
++------------------------+----------------+------------------------------------+
+; LPM_WIDTHN             ; 5              ; Untyped                            ;
+; LPM_WIDTHD             ; 4              ; Untyped                            ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                            ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                            ;
+; LPM_PIPELINE           ; 0              ; Untyped                            ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                            ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                            ;
+; CBXI_PARAMETER         ; lpm_divide_15m ; Untyped                            ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                            ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                            ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                         ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                       ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                       ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                     ;
++------------------------+----------------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 8.0 Build 215 05/29/2008 SJ Full Version
+    Info: Processing started: Sat Dec 05 16:08:48 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off homework -c homework
+Warning: Ignored assignments for entity "Block1" -- entity does not exist in design
+    Warning: Assignment of entity set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region" is ignored
+    Warning: Assignment of entity set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region" is ignored
+    Warning: Assignment of entity set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top is ignored
+    Warning: Assignment of entity set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top is ignored
+    Warning: Assignment of entity set_global_assignment -name PARTITION_COLOR 14622752 -section_id Top is ignored
+    Warning: Assignment of entity set_global_assignment -name PARTITION_IMPORT_ASSIGNMENTS ON -section_id Top is ignored
+    Warning: Assignment of entity set_global_assignment -name PARTITION_IMPORT_EXISTING_ASSIGNMENTS REPLACE_CONFLICTING -section_id Top is ignored
+    Warning: Assignment of entity set_global_assignment -name PARTITION_IMPORT_EXISTING_LOGICLOCK_REGIONS REPLACE_CONFLICTING -section_id Top is ignored
+    Warning: Assignment of entity set_global_assignment -name PARTITION_IMPORT_PIN_ASSIGNMENTS ON -section_id Top is ignored
+    Warning: Assignment of entity set_global_assignment -name PARTITION_IMPORT_PROMOTE_ASSIGNMENTS ON -section_id Top is ignored
+    Warning: Assignment of entity set_global_assignment -name PARTITION_TYPE STANDARD_PARTITION -section_id Top is ignored
+Info: Found 1 design units, including 1 entities, in source file homework.v
+    Info: Found entity 1: homework
+Info: Found 1 design units, including 1 entities, in source file calculator.v
+    Info: Found entity 1: calculator
+Info: Found 1 design units, including 1 entities, in source file yima.v
+    Info: Found entity 1: yima
+Warning: Can't analyze file -- file F:/EDA/home/bigHomework/bigHomework/homework.bdf is missing
+Info: Found 1 design units, including 1 entities, in source file Block1.bdf
+    Info: Found entity 1: Block1
+Info: Found 1 design units, including 1 entities, in source file flag.v
+    Info: Found entity 1: flag
+Info: Found 1 design units, including 1 entities, in source file led.v
+    Info: Found entity 1: led
+Info: Found 1 design units, including 1 entities, in source file fenpin2.v
+    Info: Found entity 1: fenpin2
+Info: Elaborating entity "Block1" for the top level hierarchy
+Warning: Block or symbol "yima" of instance "inst10" overlaps another block or symbol
+Info: Elaborating entity "led" for hierarchy "led:inst21"
+Warning: Using design file fenpin100.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: fenpin100
+Info: Elaborating entity "fenpin100" for hierarchy "fenpin100:inst2"
+Warning (10230): Verilog HDL assignment warning at fenpin100.v(15): truncated value with size 32 to match size of target (8)
+Warning: Using design file fenpin10.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: fenpin10
+Info: Elaborating entity "fenpin10" for hierarchy "fenpin10:inst4"
+Warning (10230): Verilog HDL assignment warning at fenpin10.v(15): truncated value with size 32 to match size of target (3)
+Warning: Using design file fenpin50.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: fenpin50
+Info: Elaborating entity "fenpin50" for hierarchy "fenpin50:inst3"
+Warning (10230): Verilog HDL assignment warning at fenpin50.v(15): truncated value with size 32 to match size of target (6)
+Info: Elaborating entity "homework" for hierarchy "homework:inst"
+Warning: Using design file qudou.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: qudou
+Info: Elaborating entity "qudou" for hierarchy "qudou:inst6"
+Info: Elaborating entity "calculator" for hierarchy "calculator:inst11"
+Info: Elaborating entity "yima" for hierarchy "yima:inst7"
+Info: Elaborating entity "flag" for hierarchy "flag:inst9"
+Warning (10235): Verilog HDL Always Construct warning at flag.v(10): variable "sum" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at flag.v(13): variable "sum" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10230): Verilog HDL assignment warning at flag.v(13): truncated value with size 32 to match size of target (4)
+Warning (10235): Verilog HDL Always Construct warning at flag.v(18): variable "sum" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10230): Verilog HDL assignment warning at flag.v(18): truncated value with size 5 to match size of target (4)
+Warning (14130): Reduced register "yima:inst14|out[4]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "yima:inst18|out[4]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "yima:inst14|out[5]" with stuck data_in port to stuck value GND
+Warning (14131): Reduced register "yima:inst14|out[0]" with stuck data_in port to stuck value VCC -- power-up level has changed
+Warning (14130): Reduced register "yima:inst18|out[5]" with stuck data_in port to stuck value GND
+Warning (14131): Reduced register "yima:inst18|out[0]" with stuck data_in port to stuck value VCC -- power-up level has changed
+Info: Duplicate registers merged to single register
+    Info (13350): Duplicate register "yima:inst14|out[3]" merged to single register "yima:inst14|out[6]"
+    Info (13350): Duplicate register "yima:inst14|out[2]" merged to single register "yima:inst14|out[6]"
+    Info (13350): Duplicate register "yima:inst14|out[1]" merged to single register "yima:inst14|out[6]"
+    Info (13350): Duplicate register "yima:inst18|out[3]" merged to single register "yima:inst18|out[6]"
+    Info (13350): Duplicate register "yima:inst18|out[2]" merged to single register "yima:inst18|out[6]"
+    Info (13350): Duplicate register "yima:inst18|out[1]" merged to single register "yima:inst18|out[6]"
+Warning (14130): Reduced register "homework:inst|win[2]" with stuck data_in port to stuck value GND
+Info: State machine "|Block1|homework:inst|state1" contains 5 states
+Info: State machine "|Block1|homework:inst|state" contains 5 states
+Info: Selected Auto state machine encoding method for state machine "|Block1|homework:inst|state1"
+Info: Encoding result for state machine "|Block1|homework:inst|state1"
+    Info: Completed encoding using 5 state bits
+        Info: Encoded state bit "homework:inst|state1.s9"
+        Info: Encoded state bit "homework:inst|state1.s8"
+        Info: Encoded state bit "homework:inst|state1.s7"
+        Info: Encoded state bit "homework:inst|state1.s6"
+        Info: Encoded state bit "homework:inst|state1.s5"
+    Info: State "|Block1|homework:inst|state1.s5" uses code string "00000"
+    Info: State "|Block1|homework:inst|state1.s6" uses code string "00011"
+    Info: State "|Block1|homework:inst|state1.s7" uses code string "00101"
+    Info: State "|Block1|homework:inst|state1.s8" uses code string "01001"
+    Info: State "|Block1|homework:inst|state1.s9" uses code string "10001"
+Info: Selected Auto state machine encoding method for state machine "|Block1|homework:inst|state"
+Info: Encoding result for state machine "|Block1|homework:inst|state"
+    Info: Completed encoding using 5 state bits
+        Info: Encoded state bit "homework:inst|state.s3"
+        Info: Encoded state bit "homework:inst|state.s2"
+        Info: Encoded state bit "homework:inst|state.s1"
+        Info: Encoded state bit "homework:inst|state.s0"
+        Info: Encoded state bit "homework:inst|state.s4"
+    Info: State "|Block1|homework:inst|state.s0" uses code string "00000"
+    Info: State "|Block1|homework:inst|state.s1" uses code string "00110"
+    Info: State "|Block1|homework:inst|state.s2" uses code string "01010"
+    Info: State "|Block1|homework:inst|state.s3" uses code string "10010"
+    Info: State "|Block1|homework:inst|state.s4" uses code string "00011"
+Info: Inferred 2 megafunctions from design logic
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "flag:inst9|Mod0"
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "flag:inst19|Mod0"
+Info: Elaborated megafunction instantiation "flag:inst9|lpm_divide:Mod0"
+Info: Instantiated megafunction "flag:inst9|lpm_divide:Mod0" with the following parameter:
+    Info: Parameter "LPM_WIDTHN" = "5"
+    Info: Parameter "LPM_WIDTHD" = "4"
+    Info: Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info: Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info: Found 1 design units, including 1 entities, in source file db/lpm_divide_15m.tdf
+    Info: Found entity 1: lpm_divide_15m
+Info: Found 1 design units, including 1 entities, in source file db/sign_div_unsign_8kh.tdf
+    Info: Found entity 1: sign_div_unsign_8kh
+Info: Found 1 design units, including 1 entities, in source file db/alt_u_div_ive.tdf
+    Info: Found entity 1: alt_u_div_ive
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_lkc.tdf
+    Info: Found entity 1: add_sub_lkc
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_mkc.tdf
+    Info: Found entity 1: add_sub_mkc
+Info: Registers with preset signals will power-up high
+Info: DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (14130): Reduced register "led:inst21|ledstate[4]" with stuck data_in port to stuck value GND
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "out5[5]" is stuck at GND
+    Warning (13410): Pin "out5[4]" is stuck at GND
+    Warning (13410): Pin "out5[0]" is stuck at VCC
+    Warning (13410): Pin "out7[5]" is stuck at GND
+    Warning (13410): Pin "out7[4]" is stuck at GND
+    Warning (13410): Pin "out7[0]" is stuck at VCC
+Info: 9 registers lost all their fanouts during netlist optimizations. The first 9 are displayed below.
+    Info: Register "homework:inst|state1~218" lost all its fanouts during netlist optimizations.
+    Info: Register "homework:inst|state1~219" lost all its fanouts during netlist optimizations.
+    Info: Register "homework:inst|state1~220" lost all its fanouts during netlist optimizations.
+    Info: Register "homework:inst|state1~221" lost all its fanouts during netlist optimizations.
+    Info: Register "homework:inst|state1~222" lost all its fanouts during netlist optimizations.
+    Info: Register "homework:inst|state~111" lost all its fanouts during netlist optimizations.
+    Info: Register "homework:inst|state~112" lost all its fanouts during netlist optimizations.
+    Info: Register "homework:inst|state~114" lost all its fanouts during netlist optimizations.
+    Info: Register "homework:inst|state~115" lost all its fanouts during netlist optimizations.
+Info: Generated suppressed messages file F:/EDA/home/bigHomework/bigHomework/homework.map.smsg
+Info: Implemented 341 device resources after synthesis - the final resource count might be different
+    Info: Implemented 4 input pins
+    Info: Implemented 64 output pins
+    Info: Implemented 273 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 41 warnings
+    Info: Peak virtual memory: 221 megabytes
+    Info: Processing ended: Sat Dec 05 16:08:50 2020
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in F:/EDA/home/bigHomework/bigHomework/homework.map.smsg.
+
+

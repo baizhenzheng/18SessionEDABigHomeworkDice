@@ -1,0 +1,748 @@
+Classic Timing Analyzer report for homework
+Sat Dec 05 16:08:57 2020
+Quartus II Version 8.0 Build 215 05/29/2008 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Clock Setup: 'clkin'
+  6. Clock Hold: 'clkin'
+  7. tsu
+  8. tco
+  9. th
+ 10. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2008 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                                              ;
++------------------------------+------------------------------------------+---------------+----------------------------------+-----------------------+--------------------------+------------+----------+--------------+
+; Type                         ; Slack                                    ; Required Time ; Actual Time                      ; From                  ; To                       ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+------------------------------------------+---------------+----------------------------------+-----------------------+--------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A                                      ; None          ; -1.196 ns                        ; rst                   ; qudou:inst6|clkout       ; --         ; clkin    ; 0            ;
+; Worst-case tco               ; N/A                                      ; None          ; 19.223 ns                        ; yima:inst18|out[6]    ; out5[2]                  ; clkin      ; --       ; 0            ;
+; Worst-case th                ; N/A                                      ; None          ; 2.230 ns                         ; clkin2                ; qudou:inst17|count[1]    ; --         ; clkin    ; 0            ;
+; Clock Setup: 'clkin'         ; N/A                                      ; None          ; 112.36 MHz ( period = 8.900 ns ) ; qudou:inst17|clkout   ; homework:inst|scorea2[2] ; clkin      ; clkin    ; 0            ;
+; Clock Hold: 'clkin'          ; Not operational: Clock Skew > Data Delay ; None          ; N/A                              ; homework:inst|sumb[3] ; yima:inst14|out[6]       ; clkin      ; clkin    ; 198          ;
+; Total number of failed paths ;                                          ;               ;                                  ;                       ;                          ;            ;          ; 198          ;
++------------------------------+------------------------------------------+---------------+----------------------------------+-----------------------+--------------------------+------------+----------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                           ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                              ; Setting            ; From ; To ; Entity Name ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                         ; EP2C35F672C6       ;      ;    ;             ;
+; Timing Models                                                       ; Final              ;      ;    ;             ;
+; Default hold multicycle                                             ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                           ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                              ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                      ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                    ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                               ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                             ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                    ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                       ; Off                ;      ;    ;             ;
+; Number of source nodes to report per destination node               ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                               ; 10                 ;      ;    ;             ;
+; Number of paths to report                                           ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                        ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                              ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                          ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                        ; On                 ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis      ; Off                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation ; Off                ;      ;    ;             ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clkin           ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clkin'                                                                                                                                                                                                                                            ;
++-----------------------------------------+-----------------------------------------------------+--------------------------+--------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                     ; To                       ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+--------------------------+--------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 112.36 MHz ( period = 8.900 ns )                    ; qudou:inst17|clkout      ; homework:inst|scorea2[0] ; clkin      ; clkin    ; None                        ; None                      ; 2.752 ns                ;
+; N/A                                     ; 112.36 MHz ( period = 8.900 ns )                    ; qudou:inst17|clkout      ; homework:inst|scorea2[3] ; clkin      ; clkin    ; None                        ; None                      ; 2.752 ns                ;
+; N/A                                     ; 112.36 MHz ( period = 8.900 ns )                    ; qudou:inst17|clkout      ; homework:inst|scorea2[1] ; clkin      ; clkin    ; None                        ; None                      ; 2.752 ns                ;
+; N/A                                     ; 112.36 MHz ( period = 8.900 ns )                    ; qudou:inst17|clkout      ; homework:inst|scorea2[2] ; clkin      ; clkin    ; None                        ; None                      ; 2.752 ns                ;
+; N/A                                     ; 118.26 MHz ( period = 8.456 ns )                    ; qudou:inst6|clkout       ; homework:inst|win[1]     ; clkin      ; clkin    ; None                        ; None                      ; 2.317 ns                ;
+; N/A                                     ; 118.26 MHz ( period = 8.456 ns )                    ; qudou:inst6|clkout       ; homework:inst|win[0]     ; clkin      ; clkin    ; None                        ; None                      ; 2.317 ns                ;
+; N/A                                     ; 119.57 MHz ( period = 8.363 ns )                    ; qudou:inst17|clkout      ; homework:inst|scorea1[0] ; clkin      ; clkin    ; None                        ; None                      ; 2.215 ns                ;
+; N/A                                     ; 119.57 MHz ( period = 8.363 ns )                    ; qudou:inst17|clkout      ; homework:inst|scorea1[3] ; clkin      ; clkin    ; None                        ; None                      ; 2.215 ns                ;
+; N/A                                     ; 119.57 MHz ( period = 8.363 ns )                    ; qudou:inst17|clkout      ; homework:inst|scorea1[1] ; clkin      ; clkin    ; None                        ; None                      ; 2.215 ns                ;
+; N/A                                     ; 119.57 MHz ( period = 8.363 ns )                    ; qudou:inst17|clkout      ; homework:inst|scorea1[2] ; clkin      ; clkin    ; None                        ; None                      ; 2.215 ns                ;
+; N/A                                     ; 120.19 MHz ( period = 8.320 ns )                    ; qudou:inst16|clkout      ; homework:inst|scoreb2[2] ; clkin      ; clkin    ; None                        ; None                      ; 2.171 ns                ;
+; N/A                                     ; 120.19 MHz ( period = 8.320 ns )                    ; qudou:inst16|clkout      ; homework:inst|scoreb2[1] ; clkin      ; clkin    ; None                        ; None                      ; 2.171 ns                ;
+; N/A                                     ; 120.19 MHz ( period = 8.320 ns )                    ; qudou:inst16|clkout      ; homework:inst|scoreb2[3] ; clkin      ; clkin    ; None                        ; None                      ; 2.171 ns                ;
+; N/A                                     ; 120.19 MHz ( period = 8.320 ns )                    ; qudou:inst16|clkout      ; homework:inst|scoreb2[0] ; clkin      ; clkin    ; None                        ; None                      ; 2.171 ns                ;
+; N/A                                     ; 120.26 MHz ( period = 8.315 ns )                    ; qudou:inst16|clkout      ; homework:inst|scoreb1[2] ; clkin      ; clkin    ; None                        ; None                      ; 2.166 ns                ;
+; N/A                                     ; 120.26 MHz ( period = 8.315 ns )                    ; qudou:inst16|clkout      ; homework:inst|scoreb1[1] ; clkin      ; clkin    ; None                        ; None                      ; 2.166 ns                ;
+; N/A                                     ; 120.26 MHz ( period = 8.315 ns )                    ; qudou:inst16|clkout      ; homework:inst|scoreb1[3] ; clkin      ; clkin    ; None                        ; None                      ; 2.166 ns                ;
+; N/A                                     ; 120.26 MHz ( period = 8.315 ns )                    ; qudou:inst16|clkout      ; homework:inst|scoreb1[0] ; clkin      ; clkin    ; None                        ; None                      ; 2.166 ns                ;
+; N/A                                     ; 121.37 MHz ( period = 8.239 ns )                    ; qudou:inst6|clkout       ; homework:inst|sumb[1]    ; clkin      ; clkin    ; None                        ; None                      ; 2.099 ns                ;
+; N/A                                     ; 121.37 MHz ( period = 8.239 ns )                    ; qudou:inst6|clkout       ; homework:inst|sumb[2]    ; clkin      ; clkin    ; None                        ; None                      ; 2.099 ns                ;
+; N/A                                     ; 121.37 MHz ( period = 8.239 ns )                    ; qudou:inst6|clkout       ; homework:inst|sumb[3]    ; clkin      ; clkin    ; None                        ; None                      ; 2.099 ns                ;
+; N/A                                     ; 121.37 MHz ( period = 8.239 ns )                    ; qudou:inst6|clkout       ; homework:inst|suma[1]    ; clkin      ; clkin    ; None                        ; None                      ; 2.099 ns                ;
+; N/A                                     ; 121.37 MHz ( period = 8.239 ns )                    ; qudou:inst6|clkout       ; homework:inst|suma[3]    ; clkin      ; clkin    ; None                        ; None                      ; 2.099 ns                ;
+; N/A                                     ; 121.37 MHz ( period = 8.239 ns )                    ; qudou:inst6|clkout       ; homework:inst|sumb[4]    ; clkin      ; clkin    ; None                        ; None                      ; 2.099 ns                ;
+; N/A                                     ; 121.37 MHz ( period = 8.239 ns )                    ; qudou:inst6|clkout       ; homework:inst|sumb[0]    ; clkin      ; clkin    ; None                        ; None                      ; 2.099 ns                ;
+; N/A                                     ; 121.37 MHz ( period = 8.239 ns )                    ; qudou:inst6|clkout       ; homework:inst|suma[0]    ; clkin      ; clkin    ; None                        ; None                      ; 2.099 ns                ;
+; N/A                                     ; 121.57 MHz ( period = 8.226 ns )                    ; qudou:inst6|clkout       ; homework:inst|suma[2]    ; clkin      ; clkin    ; None                        ; None                      ; 2.092 ns                ;
+; N/A                                     ; 121.57 MHz ( period = 8.226 ns )                    ; qudou:inst6|clkout       ; homework:inst|suma[4]    ; clkin      ; clkin    ; None                        ; None                      ; 2.092 ns                ;
+; N/A                                     ; 122.14 MHz ( period = 8.187 ns )                    ; qudou:inst6|clkout       ; homework:inst|state1.s8  ; clkin      ; clkin    ; None                        ; None                      ; 2.039 ns                ;
+; N/A                                     ; 122.14 MHz ( period = 8.187 ns )                    ; qudou:inst6|clkout       ; homework:inst|state1.s6  ; clkin      ; clkin    ; None                        ; None                      ; 2.039 ns                ;
+; N/A                                     ; 122.20 MHz ( period = 8.183 ns )                    ; qudou:inst6|clkout       ; homework:inst|state1.s9  ; clkin      ; clkin    ; None                        ; None                      ; 2.035 ns                ;
+; N/A                                     ; 122.22 MHz ( period = 8.182 ns )                    ; qudou:inst6|clkout       ; homework:inst|state1.s7  ; clkin      ; clkin    ; None                        ; None                      ; 2.034 ns                ;
+; N/A                                     ; 123.32 MHz ( period = 8.109 ns )                    ; qudou:inst6|clkout       ; homework:inst|scoreb2[2] ; clkin      ; clkin    ; None                        ; None                      ; 1.960 ns                ;
+; N/A                                     ; 123.32 MHz ( period = 8.109 ns )                    ; qudou:inst6|clkout       ; homework:inst|scoreb2[1] ; clkin      ; clkin    ; None                        ; None                      ; 1.960 ns                ;
+; N/A                                     ; 123.32 MHz ( period = 8.109 ns )                    ; qudou:inst6|clkout       ; homework:inst|scoreb2[3] ; clkin      ; clkin    ; None                        ; None                      ; 1.960 ns                ;
+; N/A                                     ; 123.32 MHz ( period = 8.109 ns )                    ; qudou:inst6|clkout       ; homework:inst|scoreb2[0] ; clkin      ; clkin    ; None                        ; None                      ; 1.960 ns                ;
+; N/A                                     ; 123.43 MHz ( period = 8.102 ns )                    ; qudou:inst6|clkout       ; homework:inst|scoreb1[2] ; clkin      ; clkin    ; None                        ; None                      ; 1.953 ns                ;
+; N/A                                     ; 123.43 MHz ( period = 8.102 ns )                    ; qudou:inst6|clkout       ; homework:inst|scoreb1[1] ; clkin      ; clkin    ; None                        ; None                      ; 1.953 ns                ;
+; N/A                                     ; 123.43 MHz ( period = 8.102 ns )                    ; qudou:inst6|clkout       ; homework:inst|scoreb1[3] ; clkin      ; clkin    ; None                        ; None                      ; 1.953 ns                ;
+; N/A                                     ; 123.43 MHz ( period = 8.102 ns )                    ; qudou:inst6|clkout       ; homework:inst|scoreb1[0] ; clkin      ; clkin    ; None                        ; None                      ; 1.953 ns                ;
+; N/A                                     ; 125.09 MHz ( period = 7.994 ns )                    ; qudou:inst16|clkout      ; homework:inst|state1.s8  ; clkin      ; clkin    ; None                        ; None                      ; 1.846 ns                ;
+; N/A                                     ; 125.09 MHz ( period = 7.994 ns )                    ; qudou:inst16|clkout      ; homework:inst|state1.s6  ; clkin      ; clkin    ; None                        ; None                      ; 1.846 ns                ;
+; N/A                                     ; 125.16 MHz ( period = 7.990 ns )                    ; qudou:inst16|clkout      ; homework:inst|state1.s9  ; clkin      ; clkin    ; None                        ; None                      ; 1.842 ns                ;
+; N/A                                     ; 125.17 MHz ( period = 7.989 ns )                    ; qudou:inst16|clkout      ; homework:inst|state1.s7  ; clkin      ; clkin    ; None                        ; None                      ; 1.841 ns                ;
+; N/A                                     ; 126.52 MHz ( period = 7.904 ns )                    ; qudou:inst6|clkout       ; homework:inst|scorea2[0] ; clkin      ; clkin    ; None                        ; None                      ; 1.756 ns                ;
+; N/A                                     ; 126.52 MHz ( period = 7.904 ns )                    ; qudou:inst6|clkout       ; homework:inst|scorea2[3] ; clkin      ; clkin    ; None                        ; None                      ; 1.756 ns                ;
+; N/A                                     ; 126.52 MHz ( period = 7.904 ns )                    ; qudou:inst6|clkout       ; homework:inst|scorea2[1] ; clkin      ; clkin    ; None                        ; None                      ; 1.756 ns                ;
+; N/A                                     ; 126.52 MHz ( period = 7.904 ns )                    ; qudou:inst6|clkout       ; homework:inst|scorea2[2] ; clkin      ; clkin    ; None                        ; None                      ; 1.756 ns                ;
+; N/A                                     ; 126.94 MHz ( period = 7.878 ns )                    ; qudou:inst6|clkout       ; homework:inst|scorea1[2] ; clkin      ; clkin    ; None                        ; None                      ; 1.730 ns                ;
+; N/A                                     ; 127.08 MHz ( period = 7.869 ns )                    ; qudou:inst6|clkout       ; homework:inst|scorea1[1] ; clkin      ; clkin    ; None                        ; None                      ; 1.721 ns                ;
+; N/A                                     ; 127.13 MHz ( period = 7.866 ns )                    ; qudou:inst17|clkout      ; homework:inst|state1.s8  ; clkin      ; clkin    ; None                        ; None                      ; 1.718 ns                ;
+; N/A                                     ; 127.13 MHz ( period = 7.866 ns )                    ; qudou:inst17|clkout      ; homework:inst|state1.s6  ; clkin      ; clkin    ; None                        ; None                      ; 1.718 ns                ;
+; N/A                                     ; 127.18 MHz ( period = 7.863 ns )                    ; qudou:inst6|clkout       ; homework:inst|scorea1[0] ; clkin      ; clkin    ; None                        ; None                      ; 1.715 ns                ;
+; N/A                                     ; 127.18 MHz ( period = 7.863 ns )                    ; qudou:inst6|clkout       ; homework:inst|scorea1[3] ; clkin      ; clkin    ; None                        ; None                      ; 1.715 ns                ;
+; N/A                                     ; 127.19 MHz ( period = 7.862 ns )                    ; qudou:inst17|clkout      ; homework:inst|state1.s9  ; clkin      ; clkin    ; None                        ; None                      ; 1.714 ns                ;
+; N/A                                     ; 127.21 MHz ( period = 7.861 ns )                    ; qudou:inst17|clkout      ; homework:inst|state1.s7  ; clkin      ; clkin    ; None                        ; None                      ; 1.713 ns                ;
+; N/A                                     ; 127.62 MHz ( period = 7.836 ns )                    ; qudou:inst17|clkout      ; homework:inst|state.s4   ; clkin      ; clkin    ; None                        ; None                      ; 1.690 ns                ;
+; N/A                                     ; 128.02 MHz ( period = 7.811 ns )                    ; qudou:inst16|clkout      ; homework:inst|state.s4   ; clkin      ; clkin    ; None                        ; None                      ; 1.665 ns                ;
+; N/A                                     ; 130.51 MHz ( period = 7.662 ns )                    ; qudou:inst17|clkout      ; homework:inst|state.s2   ; clkin      ; clkin    ; None                        ; None                      ; 1.515 ns                ;
+; N/A                                     ; 130.53 MHz ( period = 7.661 ns )                    ; qudou:inst17|clkout      ; homework:inst|state.s1   ; clkin      ; clkin    ; None                        ; None                      ; 1.514 ns                ;
+; N/A                                     ; 130.55 MHz ( period = 7.660 ns )                    ; qudou:inst17|clkout      ; homework:inst|state.s3   ; clkin      ; clkin    ; None                        ; None                      ; 1.513 ns                ;
+; N/A                                     ; 130.94 MHz ( period = 7.637 ns )                    ; qudou:inst16|clkout      ; homework:inst|state.s2   ; clkin      ; clkin    ; None                        ; None                      ; 1.490 ns                ;
+; N/A                                     ; 130.96 MHz ( period = 7.636 ns )                    ; qudou:inst16|clkout      ; homework:inst|state.s1   ; clkin      ; clkin    ; None                        ; None                      ; 1.489 ns                ;
+; N/A                                     ; 130.98 MHz ( period = 7.635 ns )                    ; qudou:inst16|clkout      ; homework:inst|state.s3   ; clkin      ; clkin    ; None                        ; None                      ; 1.488 ns                ;
+; N/A                                     ; 132.12 MHz ( period = 7.569 ns )                    ; qudou:inst17|clkout      ; homework:inst|state1.s5  ; clkin      ; clkin    ; None                        ; None                      ; 1.421 ns                ;
+; N/A                                     ; 134.14 MHz ( period = 7.455 ns )                    ; qudou:inst17|clkout      ; homework:inst|state.s0   ; clkin      ; clkin    ; None                        ; None                      ; 1.309 ns                ;
+; N/A                                     ; 134.32 MHz ( period = 7.445 ns )                    ; qudou:inst6|clkout       ; homework:inst|state1.s5  ; clkin      ; clkin    ; None                        ; None                      ; 1.297 ns                ;
+; N/A                                     ; 134.35 MHz ( period = 7.443 ns )                    ; qudou:inst6|clkout       ; homework:inst|state.s4   ; clkin      ; clkin    ; None                        ; None                      ; 1.297 ns                ;
+; N/A                                     ; 134.66 MHz ( period = 7.426 ns )                    ; qudou:inst6|clkout       ; homework:inst|flag       ; clkin      ; clkin    ; None                        ; None                      ; 1.280 ns                ;
+; N/A                                     ; 136.28 MHz ( period = 7.338 ns )                    ; homework:inst|scoreb1[1] ; homework:inst|sumb[1]    ; clkin      ; clkin    ; None                        ; None                      ; 7.133 ns                ;
+; N/A                                     ; 136.28 MHz ( period = 7.338 ns )                    ; homework:inst|scoreb1[1] ; homework:inst|sumb[2]    ; clkin      ; clkin    ; None                        ; None                      ; 7.133 ns                ;
+; N/A                                     ; 136.28 MHz ( period = 7.338 ns )                    ; homework:inst|scoreb1[1] ; homework:inst|sumb[3]    ; clkin      ; clkin    ; None                        ; None                      ; 7.133 ns                ;
+; N/A                                     ; 136.28 MHz ( period = 7.338 ns )                    ; homework:inst|scoreb1[1] ; homework:inst|suma[1]    ; clkin      ; clkin    ; None                        ; None                      ; 7.133 ns                ;
+; N/A                                     ; 136.28 MHz ( period = 7.338 ns )                    ; homework:inst|scoreb1[1] ; homework:inst|suma[3]    ; clkin      ; clkin    ; None                        ; None                      ; 7.133 ns                ;
+; N/A                                     ; 136.28 MHz ( period = 7.338 ns )                    ; homework:inst|scoreb1[1] ; homework:inst|sumb[4]    ; clkin      ; clkin    ; None                        ; None                      ; 7.133 ns                ;
+; N/A                                     ; 136.28 MHz ( period = 7.338 ns )                    ; homework:inst|scoreb1[1] ; homework:inst|sumb[0]    ; clkin      ; clkin    ; None                        ; None                      ; 7.133 ns                ;
+; N/A                                     ; 136.28 MHz ( period = 7.338 ns )                    ; homework:inst|scoreb1[1] ; homework:inst|suma[0]    ; clkin      ; clkin    ; None                        ; None                      ; 7.133 ns                ;
+; N/A                                     ; 136.52 MHz ( period = 7.325 ns )                    ; homework:inst|scoreb1[1] ; homework:inst|suma[2]    ; clkin      ; clkin    ; None                        ; None                      ; 7.126 ns                ;
+; N/A                                     ; 136.52 MHz ( period = 7.325 ns )                    ; homework:inst|scoreb1[1] ; homework:inst|suma[4]    ; clkin      ; clkin    ; None                        ; None                      ; 7.126 ns                ;
+; N/A                                     ; 136.89 MHz ( period = 7.305 ns )                    ; homework:inst|scoreb2[1] ; homework:inst|sumb[1]    ; clkin      ; clkin    ; None                        ; None                      ; 7.100 ns                ;
+; N/A                                     ; 136.89 MHz ( period = 7.305 ns )                    ; homework:inst|scoreb2[1] ; homework:inst|sumb[2]    ; clkin      ; clkin    ; None                        ; None                      ; 7.100 ns                ;
+; N/A                                     ; 136.89 MHz ( period = 7.305 ns )                    ; homework:inst|scoreb2[1] ; homework:inst|sumb[3]    ; clkin      ; clkin    ; None                        ; None                      ; 7.100 ns                ;
+; N/A                                     ; 136.89 MHz ( period = 7.305 ns )                    ; homework:inst|scoreb2[1] ; homework:inst|suma[1]    ; clkin      ; clkin    ; None                        ; None                      ; 7.100 ns                ;
+; N/A                                     ; 136.89 MHz ( period = 7.305 ns )                    ; homework:inst|scoreb2[1] ; homework:inst|suma[3]    ; clkin      ; clkin    ; None                        ; None                      ; 7.100 ns                ;
+; N/A                                     ; 136.89 MHz ( period = 7.305 ns )                    ; homework:inst|scoreb2[1] ; homework:inst|sumb[4]    ; clkin      ; clkin    ; None                        ; None                      ; 7.100 ns                ;
+; N/A                                     ; 136.89 MHz ( period = 7.305 ns )                    ; homework:inst|scoreb2[1] ; homework:inst|sumb[0]    ; clkin      ; clkin    ; None                        ; None                      ; 7.100 ns                ;
+; N/A                                     ; 136.89 MHz ( period = 7.305 ns )                    ; homework:inst|scoreb2[1] ; homework:inst|suma[0]    ; clkin      ; clkin    ; None                        ; None                      ; 7.100 ns                ;
+; N/A                                     ; 137.14 MHz ( period = 7.292 ns )                    ; homework:inst|scoreb2[1] ; homework:inst|suma[2]    ; clkin      ; clkin    ; None                        ; None                      ; 7.093 ns                ;
+; N/A                                     ; 137.14 MHz ( period = 7.292 ns )                    ; homework:inst|scoreb2[1] ; homework:inst|suma[4]    ; clkin      ; clkin    ; None                        ; None                      ; 7.093 ns                ;
+; N/A                                     ; 137.57 MHz ( period = 7.269 ns )                    ; qudou:inst6|clkout       ; homework:inst|state.s0   ; clkin      ; clkin    ; None                        ; None                      ; 1.123 ns                ;
+; N/A                                     ; 138.29 MHz ( period = 7.231 ns )                    ; qudou:inst6|clkout       ; homework:inst|state.s2   ; clkin      ; clkin    ; None                        ; None                      ; 1.084 ns                ;
+; N/A                                     ; 138.37 MHz ( period = 7.227 ns )                    ; qudou:inst6|clkout       ; homework:inst|state.s3   ; clkin      ; clkin    ; None                        ; None                      ; 1.080 ns                ;
+; N/A                                     ; 138.39 MHz ( period = 7.226 ns )                    ; qudou:inst6|clkout       ; homework:inst|state.s1   ; clkin      ; clkin    ; None                        ; None                      ; 1.079 ns                ;
+; N/A                                     ; 138.48 MHz ( period = 7.221 ns )                    ; homework:inst|scoreb1[0] ; homework:inst|sumb[1]    ; clkin      ; clkin    ; None                        ; None                      ; 7.016 ns                ;
+; N/A                                     ; 138.48 MHz ( period = 7.221 ns )                    ; homework:inst|scoreb1[0] ; homework:inst|sumb[2]    ; clkin      ; clkin    ; None                        ; None                      ; 7.016 ns                ;
+; N/A                                     ; 138.48 MHz ( period = 7.221 ns )                    ; homework:inst|scoreb1[0] ; homework:inst|sumb[3]    ; clkin      ; clkin    ; None                        ; None                      ; 7.016 ns                ;
+; N/A                                     ; 138.48 MHz ( period = 7.221 ns )                    ; homework:inst|scoreb1[0] ; homework:inst|suma[1]    ; clkin      ; clkin    ; None                        ; None                      ; 7.016 ns                ;
+; N/A                                     ; 138.48 MHz ( period = 7.221 ns )                    ; homework:inst|scoreb1[0] ; homework:inst|suma[3]    ; clkin      ; clkin    ; None                        ; None                      ; 7.016 ns                ;
+; N/A                                     ; 138.48 MHz ( period = 7.221 ns )                    ; homework:inst|scoreb1[0] ; homework:inst|sumb[4]    ; clkin      ; clkin    ; None                        ; None                      ; 7.016 ns                ;
+; N/A                                     ; 138.48 MHz ( period = 7.221 ns )                    ; homework:inst|scoreb1[0] ; homework:inst|sumb[0]    ; clkin      ; clkin    ; None                        ; None                      ; 7.016 ns                ;
+; N/A                                     ; 138.48 MHz ( period = 7.221 ns )                    ; homework:inst|scoreb1[0] ; homework:inst|suma[0]    ; clkin      ; clkin    ; None                        ; None                      ; 7.016 ns                ;
+; N/A                                     ; 138.73 MHz ( period = 7.208 ns )                    ; homework:inst|scoreb1[0] ; homework:inst|suma[2]    ; clkin      ; clkin    ; None                        ; None                      ; 7.009 ns                ;
+; N/A                                     ; 138.73 MHz ( period = 7.208 ns )                    ; homework:inst|scoreb1[0] ; homework:inst|suma[4]    ; clkin      ; clkin    ; None                        ; None                      ; 7.009 ns                ;
+; N/A                                     ; 139.10 MHz ( period = 7.189 ns )                    ; homework:inst|scoreb2[0] ; homework:inst|sumb[1]    ; clkin      ; clkin    ; None                        ; None                      ; 6.984 ns                ;
+; N/A                                     ; 139.10 MHz ( period = 7.189 ns )                    ; homework:inst|scoreb2[0] ; homework:inst|sumb[2]    ; clkin      ; clkin    ; None                        ; None                      ; 6.984 ns                ;
+; N/A                                     ; 139.10 MHz ( period = 7.189 ns )                    ; homework:inst|scoreb2[0] ; homework:inst|sumb[3]    ; clkin      ; clkin    ; None                        ; None                      ; 6.984 ns                ;
+; N/A                                     ; 139.10 MHz ( period = 7.189 ns )                    ; homework:inst|scoreb2[0] ; homework:inst|suma[1]    ; clkin      ; clkin    ; None                        ; None                      ; 6.984 ns                ;
+; N/A                                     ; 139.10 MHz ( period = 7.189 ns )                    ; homework:inst|scoreb2[0] ; homework:inst|suma[3]    ; clkin      ; clkin    ; None                        ; None                      ; 6.984 ns                ;
+; N/A                                     ; 139.10 MHz ( period = 7.189 ns )                    ; homework:inst|scoreb2[0] ; homework:inst|sumb[4]    ; clkin      ; clkin    ; None                        ; None                      ; 6.984 ns                ;
+; N/A                                     ; 139.10 MHz ( period = 7.189 ns )                    ; homework:inst|scoreb2[0] ; homework:inst|sumb[0]    ; clkin      ; clkin    ; None                        ; None                      ; 6.984 ns                ;
+; N/A                                     ; 139.10 MHz ( period = 7.189 ns )                    ; homework:inst|scoreb2[0] ; homework:inst|suma[0]    ; clkin      ; clkin    ; None                        ; None                      ; 6.984 ns                ;
+; N/A                                     ; 139.35 MHz ( period = 7.176 ns )                    ; homework:inst|scoreb2[0] ; homework:inst|suma[2]    ; clkin      ; clkin    ; None                        ; None                      ; 6.977 ns                ;
+; N/A                                     ; 139.35 MHz ( period = 7.176 ns )                    ; homework:inst|scoreb2[0] ; homework:inst|suma[4]    ; clkin      ; clkin    ; None                        ; None                      ; 6.977 ns                ;
+; N/A                                     ; 139.51 MHz ( period = 7.168 ns )                    ; homework:inst|scoreb1[1] ; homework:inst|win[1]     ; clkin      ; clkin    ; None                        ; None                      ; 6.964 ns                ;
+; N/A                                     ; 139.51 MHz ( period = 7.168 ns )                    ; homework:inst|scoreb1[1] ; homework:inst|win[0]     ; clkin      ; clkin    ; None                        ; None                      ; 6.964 ns                ;
+; N/A                                     ; 139.70 MHz ( period = 7.158 ns )                    ; homework:inst|scoreb2[3] ; homework:inst|sumb[1]    ; clkin      ; clkin    ; None                        ; None                      ; 6.953 ns                ;
+; N/A                                     ; 139.70 MHz ( period = 7.158 ns )                    ; homework:inst|scoreb2[3] ; homework:inst|sumb[2]    ; clkin      ; clkin    ; None                        ; None                      ; 6.953 ns                ;
+; N/A                                     ; 139.70 MHz ( period = 7.158 ns )                    ; homework:inst|scoreb2[3] ; homework:inst|sumb[3]    ; clkin      ; clkin    ; None                        ; None                      ; 6.953 ns                ;
+; N/A                                     ; 139.70 MHz ( period = 7.158 ns )                    ; homework:inst|scoreb2[3] ; homework:inst|suma[1]    ; clkin      ; clkin    ; None                        ; None                      ; 6.953 ns                ;
+; N/A                                     ; 139.70 MHz ( period = 7.158 ns )                    ; homework:inst|scoreb2[3] ; homework:inst|suma[3]    ; clkin      ; clkin    ; None                        ; None                      ; 6.953 ns                ;
+; N/A                                     ; 139.70 MHz ( period = 7.158 ns )                    ; homework:inst|scoreb2[3] ; homework:inst|sumb[4]    ; clkin      ; clkin    ; None                        ; None                      ; 6.953 ns                ;
+; N/A                                     ; 139.70 MHz ( period = 7.158 ns )                    ; homework:inst|scoreb2[3] ; homework:inst|sumb[0]    ; clkin      ; clkin    ; None                        ; None                      ; 6.953 ns                ;
+; N/A                                     ; 139.70 MHz ( period = 7.158 ns )                    ; homework:inst|scoreb2[3] ; homework:inst|suma[0]    ; clkin      ; clkin    ; None                        ; None                      ; 6.953 ns                ;
+; N/A                                     ; 139.96 MHz ( period = 7.145 ns )                    ; homework:inst|scoreb2[3] ; homework:inst|suma[2]    ; clkin      ; clkin    ; None                        ; None                      ; 6.946 ns                ;
+; N/A                                     ; 139.96 MHz ( period = 7.145 ns )                    ; homework:inst|scoreb2[3] ; homework:inst|suma[4]    ; clkin      ; clkin    ; None                        ; None                      ; 6.946 ns                ;
+; N/A                                     ; 140.15 MHz ( period = 7.135 ns )                    ; homework:inst|scoreb2[1] ; homework:inst|win[1]     ; clkin      ; clkin    ; None                        ; None                      ; 6.931 ns                ;
+; N/A                                     ; 140.15 MHz ( period = 7.135 ns )                    ; homework:inst|scoreb2[1] ; homework:inst|win[0]     ; clkin      ; clkin    ; None                        ; None                      ; 6.931 ns                ;
+; N/A                                     ; 141.26 MHz ( period = 7.079 ns )                    ; homework:inst|scoreb2[2] ; homework:inst|sumb[1]    ; clkin      ; clkin    ; None                        ; None                      ; 6.874 ns                ;
+; N/A                                     ; 141.26 MHz ( period = 7.079 ns )                    ; homework:inst|scoreb2[2] ; homework:inst|sumb[2]    ; clkin      ; clkin    ; None                        ; None                      ; 6.874 ns                ;
+; N/A                                     ; 141.26 MHz ( period = 7.079 ns )                    ; homework:inst|scoreb2[2] ; homework:inst|sumb[3]    ; clkin      ; clkin    ; None                        ; None                      ; 6.874 ns                ;
+; N/A                                     ; 141.26 MHz ( period = 7.079 ns )                    ; homework:inst|scoreb2[2] ; homework:inst|suma[1]    ; clkin      ; clkin    ; None                        ; None                      ; 6.874 ns                ;
+; N/A                                     ; 141.26 MHz ( period = 7.079 ns )                    ; homework:inst|scoreb2[2] ; homework:inst|suma[3]    ; clkin      ; clkin    ; None                        ; None                      ; 6.874 ns                ;
+; N/A                                     ; 141.26 MHz ( period = 7.079 ns )                    ; homework:inst|scoreb2[2] ; homework:inst|sumb[4]    ; clkin      ; clkin    ; None                        ; None                      ; 6.874 ns                ;
+; N/A                                     ; 141.26 MHz ( period = 7.079 ns )                    ; homework:inst|scoreb2[2] ; homework:inst|sumb[0]    ; clkin      ; clkin    ; None                        ; None                      ; 6.874 ns                ;
+; N/A                                     ; 141.26 MHz ( period = 7.079 ns )                    ; homework:inst|scoreb2[2] ; homework:inst|suma[0]    ; clkin      ; clkin    ; None                        ; None                      ; 6.874 ns                ;
+; N/A                                     ; 141.52 MHz ( period = 7.066 ns )                    ; homework:inst|scoreb2[2] ; homework:inst|suma[2]    ; clkin      ; clkin    ; None                        ; None                      ; 6.867 ns                ;
+; N/A                                     ; 141.52 MHz ( period = 7.066 ns )                    ; homework:inst|scoreb2[2] ; homework:inst|suma[4]    ; clkin      ; clkin    ; None                        ; None                      ; 6.867 ns                ;
+; N/A                                     ; 141.82 MHz ( period = 7.051 ns )                    ; homework:inst|scoreb1[0] ; homework:inst|win[1]     ; clkin      ; clkin    ; None                        ; None                      ; 6.847 ns                ;
+; N/A                                     ; 141.82 MHz ( period = 7.051 ns )                    ; homework:inst|scoreb1[0] ; homework:inst|win[0]     ; clkin      ; clkin    ; None                        ; None                      ; 6.847 ns                ;
+; N/A                                     ; 141.92 MHz ( period = 7.046 ns )                    ; homework:inst|scoreb1[2] ; homework:inst|sumb[1]    ; clkin      ; clkin    ; None                        ; None                      ; 6.841 ns                ;
+; N/A                                     ; 141.92 MHz ( period = 7.046 ns )                    ; homework:inst|scoreb1[2] ; homework:inst|sumb[2]    ; clkin      ; clkin    ; None                        ; None                      ; 6.841 ns                ;
+; N/A                                     ; 141.92 MHz ( period = 7.046 ns )                    ; homework:inst|scoreb1[2] ; homework:inst|sumb[3]    ; clkin      ; clkin    ; None                        ; None                      ; 6.841 ns                ;
+; N/A                                     ; 141.92 MHz ( period = 7.046 ns )                    ; homework:inst|scoreb1[2] ; homework:inst|suma[1]    ; clkin      ; clkin    ; None                        ; None                      ; 6.841 ns                ;
+; N/A                                     ; 141.92 MHz ( period = 7.046 ns )                    ; homework:inst|scoreb1[2] ; homework:inst|suma[3]    ; clkin      ; clkin    ; None                        ; None                      ; 6.841 ns                ;
+; N/A                                     ; 141.92 MHz ( period = 7.046 ns )                    ; homework:inst|scoreb1[2] ; homework:inst|sumb[4]    ; clkin      ; clkin    ; None                        ; None                      ; 6.841 ns                ;
+; N/A                                     ; 141.92 MHz ( period = 7.046 ns )                    ; homework:inst|scoreb1[2] ; homework:inst|sumb[0]    ; clkin      ; clkin    ; None                        ; None                      ; 6.841 ns                ;
+; N/A                                     ; 141.92 MHz ( period = 7.046 ns )                    ; homework:inst|scoreb1[2] ; homework:inst|suma[0]    ; clkin      ; clkin    ; None                        ; None                      ; 6.841 ns                ;
+; N/A                                     ; 142.19 MHz ( period = 7.033 ns )                    ; homework:inst|scoreb1[2] ; homework:inst|suma[2]    ; clkin      ; clkin    ; None                        ; None                      ; 6.834 ns                ;
+; N/A                                     ; 142.19 MHz ( period = 7.033 ns )                    ; homework:inst|scoreb1[2] ; homework:inst|suma[4]    ; clkin      ; clkin    ; None                        ; None                      ; 6.834 ns                ;
+; N/A                                     ; 142.47 MHz ( period = 7.019 ns )                    ; homework:inst|scoreb2[0] ; homework:inst|win[1]     ; clkin      ; clkin    ; None                        ; None                      ; 6.815 ns                ;
+; N/A                                     ; 142.47 MHz ( period = 7.019 ns )                    ; homework:inst|scoreb2[0] ; homework:inst|win[0]     ; clkin      ; clkin    ; None                        ; None                      ; 6.815 ns                ;
+; N/A                                     ; 143.10 MHz ( period = 6.988 ns )                    ; homework:inst|scoreb2[3] ; homework:inst|win[1]     ; clkin      ; clkin    ; None                        ; None                      ; 6.784 ns                ;
+; N/A                                     ; 143.10 MHz ( period = 6.988 ns )                    ; homework:inst|scoreb2[3] ; homework:inst|win[0]     ; clkin      ; clkin    ; None                        ; None                      ; 6.784 ns                ;
+; N/A                                     ; 143.58 MHz ( period = 6.965 ns )                    ; homework:inst|scoreb1[3] ; homework:inst|sumb[1]    ; clkin      ; clkin    ; None                        ; None                      ; 6.760 ns                ;
+; N/A                                     ; 143.58 MHz ( period = 6.965 ns )                    ; homework:inst|scoreb1[3] ; homework:inst|sumb[2]    ; clkin      ; clkin    ; None                        ; None                      ; 6.760 ns                ;
+; N/A                                     ; 143.58 MHz ( period = 6.965 ns )                    ; homework:inst|scoreb1[3] ; homework:inst|sumb[3]    ; clkin      ; clkin    ; None                        ; None                      ; 6.760 ns                ;
+; N/A                                     ; 143.58 MHz ( period = 6.965 ns )                    ; homework:inst|scoreb1[3] ; homework:inst|suma[1]    ; clkin      ; clkin    ; None                        ; None                      ; 6.760 ns                ;
+; N/A                                     ; 143.58 MHz ( period = 6.965 ns )                    ; homework:inst|scoreb1[3] ; homework:inst|suma[3]    ; clkin      ; clkin    ; None                        ; None                      ; 6.760 ns                ;
+; N/A                                     ; 143.58 MHz ( period = 6.965 ns )                    ; homework:inst|scoreb1[3] ; homework:inst|sumb[4]    ; clkin      ; clkin    ; None                        ; None                      ; 6.760 ns                ;
+; N/A                                     ; 143.58 MHz ( period = 6.965 ns )                    ; homework:inst|scoreb1[3] ; homework:inst|sumb[0]    ; clkin      ; clkin    ; None                        ; None                      ; 6.760 ns                ;
+; N/A                                     ; 143.58 MHz ( period = 6.965 ns )                    ; homework:inst|scoreb1[3] ; homework:inst|suma[0]    ; clkin      ; clkin    ; None                        ; None                      ; 6.760 ns                ;
+; N/A                                     ; 143.84 MHz ( period = 6.952 ns )                    ; homework:inst|scoreb1[3] ; homework:inst|suma[2]    ; clkin      ; clkin    ; None                        ; None                      ; 6.753 ns                ;
+; N/A                                     ; 143.84 MHz ( period = 6.952 ns )                    ; homework:inst|scoreb1[3] ; homework:inst|suma[4]    ; clkin      ; clkin    ; None                        ; None                      ; 6.753 ns                ;
+; N/A                                     ; 144.74 MHz ( period = 6.909 ns )                    ; homework:inst|scoreb2[2] ; homework:inst|win[1]     ; clkin      ; clkin    ; None                        ; None                      ; 6.705 ns                ;
+; N/A                                     ; 144.74 MHz ( period = 6.909 ns )                    ; homework:inst|scoreb2[2] ; homework:inst|win[0]     ; clkin      ; clkin    ; None                        ; None                      ; 6.705 ns                ;
+; N/A                                     ; 145.43 MHz ( period = 6.876 ns )                    ; homework:inst|scoreb1[2] ; homework:inst|win[1]     ; clkin      ; clkin    ; None                        ; None                      ; 6.672 ns                ;
+; N/A                                     ; 145.43 MHz ( period = 6.876 ns )                    ; homework:inst|scoreb1[2] ; homework:inst|win[0]     ; clkin      ; clkin    ; None                        ; None                      ; 6.672 ns                ;
+; N/A                                     ; 147.17 MHz ( period = 6.795 ns )                    ; homework:inst|scoreb1[3] ; homework:inst|win[1]     ; clkin      ; clkin    ; None                        ; None                      ; 6.591 ns                ;
+; N/A                                     ; 147.17 MHz ( period = 6.795 ns )                    ; homework:inst|scoreb1[3] ; homework:inst|win[0]     ; clkin      ; clkin    ; None                        ; None                      ; 6.591 ns                ;
+; N/A                                     ; 148.02 MHz ( period = 6.756 ns )                    ; homework:inst|scorea1[0] ; homework:inst|sumb[1]    ; clkin      ; clkin    ; None                        ; None                      ; 6.550 ns                ;
+; N/A                                     ; 148.02 MHz ( period = 6.756 ns )                    ; homework:inst|scorea1[0] ; homework:inst|sumb[2]    ; clkin      ; clkin    ; None                        ; None                      ; 6.550 ns                ;
+; N/A                                     ; 148.02 MHz ( period = 6.756 ns )                    ; homework:inst|scorea1[0] ; homework:inst|sumb[3]    ; clkin      ; clkin    ; None                        ; None                      ; 6.550 ns                ;
+; N/A                                     ; 148.02 MHz ( period = 6.756 ns )                    ; homework:inst|scorea1[0] ; homework:inst|suma[1]    ; clkin      ; clkin    ; None                        ; None                      ; 6.550 ns                ;
+; N/A                                     ; 148.02 MHz ( period = 6.756 ns )                    ; homework:inst|scorea1[0] ; homework:inst|suma[3]    ; clkin      ; clkin    ; None                        ; None                      ; 6.550 ns                ;
+; N/A                                     ; 148.02 MHz ( period = 6.756 ns )                    ; homework:inst|scorea1[0] ; homework:inst|sumb[4]    ; clkin      ; clkin    ; None                        ; None                      ; 6.550 ns                ;
+; N/A                                     ; 148.02 MHz ( period = 6.756 ns )                    ; homework:inst|scorea1[0] ; homework:inst|sumb[0]    ; clkin      ; clkin    ; None                        ; None                      ; 6.550 ns                ;
+; N/A                                     ; 148.02 MHz ( period = 6.756 ns )                    ; homework:inst|scorea1[0] ; homework:inst|suma[0]    ; clkin      ; clkin    ; None                        ; None                      ; 6.550 ns                ;
+; N/A                                     ; 148.30 MHz ( period = 6.743 ns )                    ; homework:inst|scorea1[0] ; homework:inst|suma[2]    ; clkin      ; clkin    ; None                        ; None                      ; 6.543 ns                ;
+; N/A                                     ; 148.30 MHz ( period = 6.743 ns )                    ; homework:inst|scorea1[0] ; homework:inst|suma[4]    ; clkin      ; clkin    ; None                        ; None                      ; 6.543 ns                ;
+; N/A                                     ; 151.19 MHz ( period = 6.614 ns )                    ; homework:inst|scorea2[3] ; homework:inst|sumb[1]    ; clkin      ; clkin    ; None                        ; None                      ; 6.408 ns                ;
+; N/A                                     ; 151.19 MHz ( period = 6.614 ns )                    ; homework:inst|scorea2[3] ; homework:inst|sumb[2]    ; clkin      ; clkin    ; None                        ; None                      ; 6.408 ns                ;
+; N/A                                     ; 151.19 MHz ( period = 6.614 ns )                    ; homework:inst|scorea2[3] ; homework:inst|sumb[3]    ; clkin      ; clkin    ; None                        ; None                      ; 6.408 ns                ;
+; N/A                                     ; 151.19 MHz ( period = 6.614 ns )                    ; homework:inst|scorea2[3] ; homework:inst|suma[1]    ; clkin      ; clkin    ; None                        ; None                      ; 6.408 ns                ;
+; N/A                                     ; 151.19 MHz ( period = 6.614 ns )                    ; homework:inst|scorea2[3] ; homework:inst|suma[3]    ; clkin      ; clkin    ; None                        ; None                      ; 6.408 ns                ;
+; N/A                                     ; 151.19 MHz ( period = 6.614 ns )                    ; homework:inst|scorea2[3] ; homework:inst|sumb[4]    ; clkin      ; clkin    ; None                        ; None                      ; 6.408 ns                ;
+; N/A                                     ; 151.19 MHz ( period = 6.614 ns )                    ; homework:inst|scorea2[3] ; homework:inst|sumb[0]    ; clkin      ; clkin    ; None                        ; None                      ; 6.408 ns                ;
+; N/A                                     ; 151.19 MHz ( period = 6.614 ns )                    ; homework:inst|scorea2[3] ; homework:inst|suma[0]    ; clkin      ; clkin    ; None                        ; None                      ; 6.408 ns                ;
+; N/A                                     ; 151.31 MHz ( period = 6.609 ns )                    ; homework:inst|scorea1[0] ; homework:inst|state1.s8  ; clkin      ; clkin    ; None                        ; None                      ; 6.395 ns                ;
+; N/A                                     ; 151.31 MHz ( period = 6.609 ns )                    ; homework:inst|scorea1[0] ; homework:inst|state1.s6  ; clkin      ; clkin    ; None                        ; None                      ; 6.395 ns                ;
+; N/A                                     ; 151.40 MHz ( period = 6.605 ns )                    ; homework:inst|scorea1[0] ; homework:inst|state1.s9  ; clkin      ; clkin    ; None                        ; None                      ; 6.391 ns                ;
+; N/A                                     ; 151.42 MHz ( period = 6.604 ns )                    ; homework:inst|scorea1[0] ; homework:inst|state1.s7  ; clkin      ; clkin    ; None                        ; None                      ; 6.390 ns                ;
+; N/A                                     ; 151.49 MHz ( period = 6.601 ns )                    ; homework:inst|scorea2[3] ; homework:inst|suma[2]    ; clkin      ; clkin    ; None                        ; None                      ; 6.401 ns                ;
+; N/A                                     ; 151.49 MHz ( period = 6.601 ns )                    ; homework:inst|scorea2[3] ; homework:inst|suma[4]    ; clkin      ; clkin    ; None                        ; None                      ; 6.401 ns                ;
+; N/A                                     ; 152.37 MHz ( period = 6.563 ns )                    ; homework:inst|scoreb1[1] ; homework:inst|state1.s8  ; clkin      ; clkin    ; None                        ; None                      ; 6.350 ns                ;
+; N/A                                     ; 152.37 MHz ( period = 6.563 ns )                    ; homework:inst|scoreb1[1] ; homework:inst|state1.s6  ; clkin      ; clkin    ; None                        ; None                      ; 6.350 ns                ;
+; N/A                                     ; 152.46 MHz ( period = 6.559 ns )                    ; homework:inst|scoreb1[1] ; homework:inst|state1.s9  ; clkin      ; clkin    ; None                        ; None                      ; 6.346 ns                ;
+; N/A                                     ; 152.49 MHz ( period = 6.558 ns )                    ; homework:inst|scoreb1[1] ; homework:inst|state1.s7  ; clkin      ; clkin    ; None                        ; None                      ; 6.345 ns                ;
+; N/A                                     ; 153.14 MHz ( period = 6.530 ns )                    ; homework:inst|scoreb2[1] ; homework:inst|state1.s8  ; clkin      ; clkin    ; None                        ; None                      ; 6.317 ns                ;
+; N/A                                     ; 153.14 MHz ( period = 6.530 ns )                    ; homework:inst|scoreb2[1] ; homework:inst|state1.s6  ; clkin      ; clkin    ; None                        ; None                      ; 6.317 ns                ;
+; N/A                                     ; 153.21 MHz ( period = 6.527 ns )                    ; homework:inst|scorea1[0] ; homework:inst|win[1]     ; clkin      ; clkin    ; None                        ; None                      ; 6.322 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                          ;                          ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+--------------------------+--------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Hold: 'clkin'                                                                                                                                                                                       ;
++------------------------------------------+--------------------------+------------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Minimum Slack                            ; From                     ; To                     ; From Clock ; To Clock ; Required Hold Relationship ; Required Shortest P2P Time ; Actual Shortest P2P Time ;
++------------------------------------------+--------------------------+------------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Not operational: Clock Skew > Data Delay ; homework:inst|sumb[3]    ; yima:inst14|out[6]     ; clkin      ; clkin    ; None                       ; None                       ; 0.566 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|sumb[4]    ; yima:inst14|out[6]     ; clkin      ; clkin    ; None                       ; None                       ; 0.657 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|sumb[1]    ; yima:inst14|out[6]     ; clkin      ; clkin    ; None                       ; None                       ; 0.828 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|sumb[0]    ; yima:inst13|out[4]     ; clkin      ; clkin    ; None                       ; None                       ; 0.829 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|sumb[2]    ; yima:inst14|out[6]     ; clkin      ; clkin    ; None                       ; None                       ; 0.858 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|sumb[0]    ; yima:inst13|out[2]     ; clkin      ; clkin    ; None                       ; None                       ; 0.870 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|suma[0]    ; yima:inst15|out[2]     ; clkin      ; clkin    ; None                       ; None                       ; 1.104 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|suma[0]    ; yima:inst15|out[0]     ; clkin      ; clkin    ; None                       ; None                       ; 1.113 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|suma[0]    ; yima:inst15|out[4]     ; clkin      ; clkin    ; None                       ; None                       ; 1.119 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|suma[0]    ; yima:inst15|out[3]     ; clkin      ; clkin    ; None                       ; None                       ; 1.119 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|suma[0]    ; yima:inst15|out[5]     ; clkin      ; clkin    ; None                       ; None                       ; 1.120 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|suma[0]    ; yima:inst15|out[1]     ; clkin      ; clkin    ; None                       ; None                       ; 1.120 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|suma[0]    ; yima:inst15|out[6]     ; clkin      ; clkin    ; None                       ; None                       ; 1.121 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|suma[1]    ; yima:inst18|out[6]     ; clkin      ; clkin    ; None                       ; None                       ; 1.216 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|sumb[0]    ; yima:inst13|out[6]     ; clkin      ; clkin    ; None                       ; None                       ; 1.263 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|sumb[0]    ; yima:inst13|out[3]     ; clkin      ; clkin    ; None                       ; None                       ; 1.263 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|sumb[0]    ; yima:inst13|out[1]     ; clkin      ; clkin    ; None                       ; None                       ; 1.263 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|sumb[0]    ; yima:inst13|out[5]     ; clkin      ; clkin    ; None                       ; None                       ; 1.266 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|sumb[0]    ; yima:inst13|out[0]     ; clkin      ; clkin    ; None                       ; None                       ; 1.266 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|suma[3]    ; yima:inst18|out[6]     ; clkin      ; clkin    ; None                       ; None                       ; 1.380 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|suma[4]    ; yima:inst18|out[6]     ; clkin      ; clkin    ; None                       ; None                       ; 1.549 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|suma[2]    ; yima:inst18|out[6]     ; clkin      ; clkin    ; None                       ; None                       ; 1.566 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|win[0]     ; led:inst21|ledstate[1] ; clkin      ; clkin    ; None                       ; None                       ; 0.606 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|win[0]     ; led:inst21|ledstate[3] ; clkin      ; clkin    ; None                       ; None                       ; 0.611 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|win[1]     ; led:inst21|ledstate[3] ; clkin      ; clkin    ; None                       ; None                       ; 0.721 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|win[1]     ; led:inst21|ledstate[0] ; clkin      ; clkin    ; None                       ; None                       ; 0.857 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|sumb[1]    ; yima:inst13|out[5]     ; clkin      ; clkin    ; None                       ; None                       ; 1.916 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|sumb[1]    ; yima:inst13|out[3]     ; clkin      ; clkin    ; None                       ; None                       ; 1.916 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|sumb[1]    ; yima:inst13|out[1]     ; clkin      ; clkin    ; None                       ; None                       ; 1.916 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|sumb[1]    ; yima:inst13|out[0]     ; clkin      ; clkin    ; None                       ; None                       ; 1.916 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|sumb[1]    ; yima:inst13|out[6]     ; clkin      ; clkin    ; None                       ; None                       ; 1.917 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|win[0]     ; led:inst21|ledstate[2] ; clkin      ; clkin    ; None                       ; None                       ; 0.892 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|win[0]     ; led:inst21|ledstate[0] ; clkin      ; clkin    ; None                       ; None                       ; 0.912 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|suma[1]    ; yima:inst15|out[6]     ; clkin      ; clkin    ; None                       ; None                       ; 1.985 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|suma[1]    ; yima:inst15|out[3]     ; clkin      ; clkin    ; None                       ; None                       ; 1.996 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|suma[1]    ; yima:inst15|out[2]     ; clkin      ; clkin    ; None                       ; None                       ; 1.998 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|suma[1]    ; yima:inst15|out[4]     ; clkin      ; clkin    ; None                       ; None                       ; 2.024 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|suma[1]    ; yima:inst15|out[1]     ; clkin      ; clkin    ; None                       ; None                       ; 2.025 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|suma[1]    ; yima:inst15|out[0]     ; clkin      ; clkin    ; None                       ; None                       ; 2.026 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|suma[1]    ; yima:inst15|out[5]     ; clkin      ; clkin    ; None                       ; None                       ; 2.029 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|sumb[3]    ; yima:inst13|out[2]     ; clkin      ; clkin    ; None                       ; None                       ; 2.035 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|sumb[3]    ; yima:inst13|out[4]     ; clkin      ; clkin    ; None                       ; None                       ; 2.038 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|sumb[4]    ; yima:inst13|out[2]     ; clkin      ; clkin    ; None                       ; None                       ; 2.126 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|sumb[4]    ; yima:inst13|out[4]     ; clkin      ; clkin    ; None                       ; None                       ; 2.129 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|win[1]     ; led:inst21|ledstate[2] ; clkin      ; clkin    ; None                       ; None                       ; 1.122 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|sumb[1]    ; yima:inst13|out[2]     ; clkin      ; clkin    ; None                       ; None                       ; 2.204 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|sumb[1]    ; yima:inst13|out[4]     ; clkin      ; clkin    ; None                       ; None                       ; 2.206 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|sumb[3]    ; yima:inst13|out[6]     ; clkin      ; clkin    ; None                       ; None                       ; 2.209 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|sumb[3]    ; yima:inst13|out[0]     ; clkin      ; clkin    ; None                       ; None                       ; 2.210 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|sumb[3]    ; yima:inst13|out[5]     ; clkin      ; clkin    ; None                       ; None                       ; 2.213 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|sumb[3]    ; yima:inst13|out[3]     ; clkin      ; clkin    ; None                       ; None                       ; 2.214 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|sumb[3]    ; yima:inst13|out[1]     ; clkin      ; clkin    ; None                       ; None                       ; 2.214 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|win[1]     ; led:inst21|ledstate[1] ; clkin      ; clkin    ; None                       ; None                       ; 1.279 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|sumb[2]    ; yima:inst13|out[2]     ; clkin      ; clkin    ; None                       ; None                       ; 2.327 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|sumb[2]    ; yima:inst13|out[4]     ; clkin      ; clkin    ; None                       ; None                       ; 2.330 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|suma[2]    ; yima:inst15|out[4]     ; clkin      ; clkin    ; None                       ; None                       ; 2.459 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|suma[2]    ; yima:inst15|out[1]     ; clkin      ; clkin    ; None                       ; None                       ; 2.468 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|suma[2]    ; yima:inst15|out[2]     ; clkin      ; clkin    ; None                       ; None                       ; 2.479 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|suma[2]    ; yima:inst15|out[0]     ; clkin      ; clkin    ; None                       ; None                       ; 2.493 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|suma[2]    ; yima:inst15|out[5]     ; clkin      ; clkin    ; None                       ; None                       ; 2.498 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|suma[2]    ; yima:inst15|out[3]     ; clkin      ; clkin    ; None                       ; None                       ; 2.499 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|suma[2]    ; yima:inst15|out[6]     ; clkin      ; clkin    ; None                       ; None                       ; 2.501 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|sumb[4]    ; yima:inst13|out[6]     ; clkin      ; clkin    ; None                       ; None                       ; 2.556 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|sumb[4]    ; yima:inst13|out[0]     ; clkin      ; clkin    ; None                       ; None                       ; 2.557 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|sumb[4]    ; yima:inst13|out[5]     ; clkin      ; clkin    ; None                       ; None                       ; 2.560 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|sumb[4]    ; yima:inst13|out[3]     ; clkin      ; clkin    ; None                       ; None                       ; 2.561 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|sumb[4]    ; yima:inst13|out[1]     ; clkin      ; clkin    ; None                       ; None                       ; 2.561 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|sumb[2]    ; yima:inst13|out[6]     ; clkin      ; clkin    ; None                       ; None                       ; 2.757 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|sumb[2]    ; yima:inst13|out[0]     ; clkin      ; clkin    ; None                       ; None                       ; 2.758 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea2[0] ; yima:inst8|out[1]      ; clkin      ; clkin    ; None                       ; None                       ; 2.793 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea2[0] ; yima:inst8|out[3]      ; clkin      ; clkin    ; None                       ; None                       ; 2.794 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|sumb[2]    ; yima:inst13|out[5]     ; clkin      ; clkin    ; None                       ; None                       ; 2.761 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea2[0] ; yima:inst8|out[5]      ; clkin      ; clkin    ; None                       ; None                       ; 2.795 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|sumb[2]    ; yima:inst13|out[3]     ; clkin      ; clkin    ; None                       ; None                       ; 2.762 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|sumb[2]    ; yima:inst13|out[1]     ; clkin      ; clkin    ; None                       ; None                       ; 2.762 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea2[0] ; yima:inst8|out[4]      ; clkin      ; clkin    ; None                       ; None                       ; 2.796 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea2[0] ; yima:inst8|out[2]      ; clkin      ; clkin    ; None                       ; None                       ; 2.796 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea2[0] ; yima:inst8|out[0]      ; clkin      ; clkin    ; None                       ; None                       ; 2.798 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea2[0] ; yima:inst8|out[6]      ; clkin      ; clkin    ; None                       ; None                       ; 2.799 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|suma[3]    ; yima:inst15|out[2]     ; clkin      ; clkin    ; None                       ; None                       ; 2.882 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|suma[3]    ; yima:inst15|out[0]     ; clkin      ; clkin    ; None                       ; None                       ; 2.892 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|suma[3]    ; yima:inst15|out[3]     ; clkin      ; clkin    ; None                       ; None                       ; 2.894 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|suma[3]    ; yima:inst15|out[4]     ; clkin      ; clkin    ; None                       ; None                       ; 2.895 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|suma[3]    ; yima:inst15|out[1]     ; clkin      ; clkin    ; None                       ; None                       ; 2.896 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|suma[3]    ; yima:inst15|out[5]     ; clkin      ; clkin    ; None                       ; None                       ; 2.897 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|suma[3]    ; yima:inst15|out[6]     ; clkin      ; clkin    ; None                       ; None                       ; 2.898 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea2[3] ; yima:inst8|out[2]      ; clkin      ; clkin    ; None                       ; None                       ; 2.946 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea2[3] ; yima:inst8|out[5]      ; clkin      ; clkin    ; None                       ; None                       ; 2.947 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea2[3] ; yima:inst8|out[3]      ; clkin      ; clkin    ; None                       ; None                       ; 2.948 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea2[3] ; yima:inst8|out[1]      ; clkin      ; clkin    ; None                       ; None                       ; 2.950 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea2[3] ; yima:inst8|out[4]      ; clkin      ; clkin    ; None                       ; None                       ; 2.952 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea2[3] ; yima:inst8|out[0]      ; clkin      ; clkin    ; None                       ; None                       ; 2.955 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea2[3] ; yima:inst8|out[6]      ; clkin      ; clkin    ; None                       ; None                       ; 2.957 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb1[3] ; yima:inst10|out[4]     ; clkin      ; clkin    ; None                       ; None                       ; 2.975 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb1[3] ; yima:inst10|out[3]     ; clkin      ; clkin    ; None                       ; None                       ; 2.975 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb1[3] ; yima:inst10|out[6]     ; clkin      ; clkin    ; None                       ; None                       ; 2.976 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb1[3] ; yima:inst10|out[0]     ; clkin      ; clkin    ; None                       ; None                       ; 2.976 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb1[3] ; yima:inst10|out[5]     ; clkin      ; clkin    ; None                       ; None                       ; 2.977 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb1[3] ; yima:inst10|out[1]     ; clkin      ; clkin    ; None                       ; None                       ; 2.980 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb1[3] ; yima:inst10|out[2]     ; clkin      ; clkin    ; None                       ; None                       ; 2.982 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb2[2] ; yima:inst12|out[1]     ; clkin      ; clkin    ; None                       ; None                       ; 2.970 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea2[1] ; yima:inst8|out[6]      ; clkin      ; clkin    ; None                       ; None                       ; 2.986 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb2[2] ; yima:inst12|out[4]     ; clkin      ; clkin    ; None                       ; None                       ; 2.975 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb2[2] ; yima:inst12|out[3]     ; clkin      ; clkin    ; None                       ; None                       ; 2.978 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb2[2] ; yima:inst12|out[6]     ; clkin      ; clkin    ; None                       ; None                       ; 2.979 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb2[2] ; yima:inst12|out[0]     ; clkin      ; clkin    ; None                       ; None                       ; 2.980 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb2[2] ; yima:inst12|out[5]     ; clkin      ; clkin    ; None                       ; None                       ; 2.981 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb2[2] ; yima:inst12|out[2]     ; clkin      ; clkin    ; None                       ; None                       ; 2.981 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea2[1] ; yima:inst8|out[3]      ; clkin      ; clkin    ; None                       ; None                       ; 3.003 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea2[1] ; yima:inst8|out[2]      ; clkin      ; clkin    ; None                       ; None                       ; 3.004 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea2[1] ; yima:inst8|out[4]      ; clkin      ; clkin    ; None                       ; None                       ; 3.026 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea2[1] ; yima:inst8|out[0]      ; clkin      ; clkin    ; None                       ; None                       ; 3.028 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea2[1] ; yima:inst8|out[1]      ; clkin      ; clkin    ; None                       ; None                       ; 3.031 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea2[1] ; yima:inst8|out[5]      ; clkin      ; clkin    ; None                       ; None                       ; 3.036 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb1[1] ; yima:inst10|out[5]     ; clkin      ; clkin    ; None                       ; None                       ; 3.049 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb1[1] ; yima:inst10|out[4]     ; clkin      ; clkin    ; None                       ; None                       ; 3.049 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb1[1] ; yima:inst10|out[3]     ; clkin      ; clkin    ; None                       ; None                       ; 3.049 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb1[1] ; yima:inst10|out[6]     ; clkin      ; clkin    ; None                       ; None                       ; 3.050 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb1[1] ; yima:inst10|out[1]     ; clkin      ; clkin    ; None                       ; None                       ; 3.052 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb1[1] ; yima:inst10|out[0]     ; clkin      ; clkin    ; None                       ; None                       ; 3.052 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb1[1] ; yima:inst10|out[2]     ; clkin      ; clkin    ; None                       ; None                       ; 3.054 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb2[3] ; yima:inst12|out[1]     ; clkin      ; clkin    ; None                       ; None                       ; 3.096 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb2[3] ; yima:inst12|out[4]     ; clkin      ; clkin    ; None                       ; None                       ; 3.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb2[3] ; yima:inst12|out[0]     ; clkin      ; clkin    ; None                       ; None                       ; 3.102 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb2[3] ; yima:inst12|out[3]     ; clkin      ; clkin    ; None                       ; None                       ; 3.103 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb2[3] ; yima:inst12|out[6]     ; clkin      ; clkin    ; None                       ; None                       ; 3.105 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb2[3] ; yima:inst12|out[5]     ; clkin      ; clkin    ; None                       ; None                       ; 3.107 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb2[3] ; yima:inst12|out[2]     ; clkin      ; clkin    ; None                       ; None                       ; 3.107 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb2[1] ; yima:inst12|out[6]     ; clkin      ; clkin    ; None                       ; None                       ; 3.210 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb2[1] ; yima:inst12|out[5]     ; clkin      ; clkin    ; None                       ; None                       ; 3.220 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb2[1] ; yima:inst12|out[3]     ; clkin      ; clkin    ; None                       ; None                       ; 3.221 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb2[0] ; yima:inst12|out[4]     ; clkin      ; clkin    ; None                       ; None                       ; 3.229 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb1[2] ; yima:inst10|out[4]     ; clkin      ; clkin    ; None                       ; None                       ; 3.250 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb2[0] ; yima:inst12|out[5]     ; clkin      ; clkin    ; None                       ; None                       ; 3.245 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb1[2] ; yima:inst10|out[1]     ; clkin      ; clkin    ; None                       ; None                       ; 3.261 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb2[1] ; yima:inst12|out[4]     ; clkin      ; clkin    ; None                       ; None                       ; 3.250 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea2[2] ; yima:inst8|out[4]      ; clkin      ; clkin    ; None                       ; None                       ; 3.265 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb2[1] ; yima:inst12|out[0]     ; clkin      ; clkin    ; None                       ; None                       ; 3.254 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb2[1] ; yima:inst12|out[2]     ; clkin      ; clkin    ; None                       ; None                       ; 3.256 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb2[1] ; yima:inst12|out[1]     ; clkin      ; clkin    ; None                       ; None                       ; 3.257 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea2[2] ; yima:inst8|out[1]      ; clkin      ; clkin    ; None                       ; None                       ; 3.276 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb2[0] ; yima:inst12|out[1]     ; clkin      ; clkin    ; None                       ; None                       ; 3.264 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb2[0] ; yima:inst12|out[3]     ; clkin      ; clkin    ; None                       ; None                       ; 3.272 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb2[0] ; yima:inst12|out[6]     ; clkin      ; clkin    ; None                       ; None                       ; 3.274 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb2[0] ; yima:inst12|out[0]     ; clkin      ; clkin    ; None                       ; None                       ; 3.275 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb2[0] ; yima:inst12|out[2]     ; clkin      ; clkin    ; None                       ; None                       ; 3.276 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb1[2] ; yima:inst10|out[2]     ; clkin      ; clkin    ; None                       ; None                       ; 3.293 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb1[2] ; yima:inst10|out[0]     ; clkin      ; clkin    ; None                       ; None                       ; 3.293 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb1[2] ; yima:inst10|out[3]     ; clkin      ; clkin    ; None                       ; None                       ; 3.294 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb1[2] ; yima:inst10|out[6]     ; clkin      ; clkin    ; None                       ; None                       ; 3.296 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb1[2] ; yima:inst10|out[5]     ; clkin      ; clkin    ; None                       ; None                       ; 3.296 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|suma[4]    ; yima:inst15|out[4]     ; clkin      ; clkin    ; None                       ; None                       ; 3.271 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea2[2] ; yima:inst8|out[0]      ; clkin      ; clkin    ; None                       ; None                       ; 3.306 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea2[2] ; yima:inst8|out[6]      ; clkin      ; clkin    ; None                       ; None                       ; 3.307 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea2[2] ; yima:inst8|out[5]      ; clkin      ; clkin    ; None                       ; None                       ; 3.308 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea2[2] ; yima:inst8|out[3]      ; clkin      ; clkin    ; None                       ; None                       ; 3.309 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|suma[4]    ; yima:inst15|out[1]     ; clkin      ; clkin    ; None                       ; None                       ; 3.280 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea2[2] ; yima:inst8|out[2]      ; clkin      ; clkin    ; None                       ; None                       ; 3.310 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|suma[4]    ; yima:inst15|out[2]     ; clkin      ; clkin    ; None                       ; None                       ; 3.291 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb1[0] ; yima:inst10|out[4]     ; clkin      ; clkin    ; None                       ; None                       ; 3.331 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|suma[4]    ; yima:inst15|out[6]     ; clkin      ; clkin    ; None                       ; None                       ; 3.302 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|suma[4]    ; yima:inst15|out[0]     ; clkin      ; clkin    ; None                       ; None                       ; 3.305 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|suma[4]    ; yima:inst15|out[5]     ; clkin      ; clkin    ; None                       ; None                       ; 3.310 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|suma[4]    ; yima:inst15|out[3]     ; clkin      ; clkin    ; None                       ; None                       ; 3.311 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea1[0] ; yima:inst7|out[4]      ; clkin      ; clkin    ; None                       ; None                       ; 3.345 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb1[0] ; yima:inst10|out[5]     ; clkin      ; clkin    ; None                       ; None                       ; 3.367 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb1[0] ; yima:inst10|out[3]     ; clkin      ; clkin    ; None                       ; None                       ; 3.370 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb1[0] ; yima:inst10|out[6]     ; clkin      ; clkin    ; None                       ; None                       ; 3.372 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb1[0] ; yima:inst10|out[1]     ; clkin      ; clkin    ; None                       ; None                       ; 3.372 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb1[0] ; yima:inst10|out[0]     ; clkin      ; clkin    ; None                       ; None                       ; 3.372 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scoreb1[0] ; yima:inst10|out[2]     ; clkin      ; clkin    ; None                       ; None                       ; 3.375 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea1[0] ; yima:inst7|out[1]      ; clkin      ; clkin    ; None                       ; None                       ; 3.373 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea1[0] ; yima:inst7|out[0]      ; clkin      ; clkin    ; None                       ; None                       ; 3.382 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea1[0] ; yima:inst7|out[6]      ; clkin      ; clkin    ; None                       ; None                       ; 3.383 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea1[0] ; yima:inst7|out[5]      ; clkin      ; clkin    ; None                       ; None                       ; 3.383 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea1[1] ; yima:inst7|out[4]      ; clkin      ; clkin    ; None                       ; None                       ; 3.383 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea1[1] ; yima:inst7|out[2]      ; clkin      ; clkin    ; None                       ; None                       ; 3.383 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea1[0] ; yima:inst7|out[3]      ; clkin      ; clkin    ; None                       ; None                       ; 3.384 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea1[1] ; yima:inst7|out[3]      ; clkin      ; clkin    ; None                       ; None                       ; 3.384 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea1[1] ; yima:inst7|out[6]      ; clkin      ; clkin    ; None                       ; None                       ; 3.385 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea1[1] ; yima:inst7|out[5]      ; clkin      ; clkin    ; None                       ; None                       ; 3.386 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea1[0] ; yima:inst7|out[2]      ; clkin      ; clkin    ; None                       ; None                       ; 3.386 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea1[1] ; yima:inst7|out[0]      ; clkin      ; clkin    ; None                       ; None                       ; 3.386 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea1[1] ; yima:inst7|out[1]      ; clkin      ; clkin    ; None                       ; None                       ; 3.388 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea1[2] ; yima:inst7|out[1]      ; clkin      ; clkin    ; None                       ; None                       ; 4.209 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea1[2] ; yima:inst7|out[5]      ; clkin      ; clkin    ; None                       ; None                       ; 4.219 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea1[2] ; yima:inst7|out[0]      ; clkin      ; clkin    ; None                       ; None                       ; 4.219 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea1[2] ; yima:inst7|out[6]      ; clkin      ; clkin    ; None                       ; None                       ; 4.220 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea1[2] ; yima:inst7|out[3]      ; clkin      ; clkin    ; None                       ; None                       ; 4.220 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea1[2] ; yima:inst7|out[4]      ; clkin      ; clkin    ; None                       ; None                       ; 4.221 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea1[2] ; yima:inst7|out[2]      ; clkin      ; clkin    ; None                       ; None                       ; 4.221 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea1[3] ; yima:inst7|out[1]      ; clkin      ; clkin    ; None                       ; None                       ; 4.322 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea1[3] ; yima:inst7|out[4]      ; clkin      ; clkin    ; None                       ; None                       ; 4.338 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea1[3] ; yima:inst7|out[6]      ; clkin      ; clkin    ; None                       ; None                       ; 4.342 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea1[3] ; yima:inst7|out[5]      ; clkin      ; clkin    ; None                       ; None                       ; 4.342 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea1[3] ; yima:inst7|out[3]      ; clkin      ; clkin    ; None                       ; None                       ; 4.342 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea1[3] ; yima:inst7|out[0]      ; clkin      ; clkin    ; None                       ; None                       ; 4.383 ns                 ;
+; Not operational: Clock Skew > Data Delay ; homework:inst|scorea1[3] ; yima:inst7|out[2]      ; clkin      ; clkin    ; None                       ; None                       ; 4.388 ns                 ;
++------------------------------------------+--------------------------+------------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+
+
++-------------------------------------------------------------------------------+
+; tsu                                                                           ;
++-------+--------------+------------+--------+-----------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From   ; To                    ; To Clock ;
++-------+--------------+------------+--------+-----------------------+----------+
+; N/A   ; None         ; -1.196 ns  ; rst    ; qudou:inst6|clkout    ; clkin    ;
+; N/A   ; None         ; -1.392 ns  ; rst    ; qudou:inst6|count[0]  ; clkin    ;
+; N/A   ; None         ; -1.395 ns  ; rst    ; qudou:inst6|count[3]  ; clkin    ;
+; N/A   ; None         ; -1.416 ns  ; rst    ; qudou:inst6|count[1]  ; clkin    ;
+; N/A   ; None         ; -1.420 ns  ; rst    ; qudou:inst6|count[2]  ; clkin    ;
+; N/A   ; None         ; -1.707 ns  ; clkin3 ; qudou:inst16|clkout   ; clkin    ;
+; N/A   ; None         ; -1.854 ns  ; clkin2 ; qudou:inst17|clkout   ; clkin    ;
+; N/A   ; None         ; -1.885 ns  ; clkin3 ; qudou:inst16|count[1] ; clkin    ;
+; N/A   ; None         ; -1.887 ns  ; clkin3 ; qudou:inst16|count[0] ; clkin    ;
+; N/A   ; None         ; -1.888 ns  ; clkin3 ; qudou:inst16|count[3] ; clkin    ;
+; N/A   ; None         ; -1.913 ns  ; clkin3 ; qudou:inst16|count[2] ; clkin    ;
+; N/A   ; None         ; -1.971 ns  ; clkin2 ; qudou:inst17|count[3] ; clkin    ;
+; N/A   ; None         ; -1.974 ns  ; clkin2 ; qudou:inst17|count[0] ; clkin    ;
+; N/A   ; None         ; -1.996 ns  ; clkin2 ; qudou:inst17|count[2] ; clkin    ;
+; N/A   ; None         ; -2.000 ns  ; clkin2 ; qudou:inst17|count[1] ; clkin    ;
++-------+--------------+------------+--------+-----------------------+----------+
+
+
++-------------------------------------------------------------------------------+
+; tco                                                                           ;
++-------+--------------+------------+--------------------+---------+------------+
+; Slack ; Required tco ; Actual tco ; From               ; To      ; From Clock ;
++-------+--------------+------------+--------------------+---------+------------+
+; N/A   ; None         ; 19.223 ns  ; yima:inst18|out[6] ; out5[1] ; clkin      ;
+; N/A   ; None         ; 19.223 ns  ; yima:inst18|out[6] ; out5[2] ; clkin      ;
+; N/A   ; None         ; 19.203 ns  ; yima:inst18|out[6] ; out5[3] ; clkin      ;
+; N/A   ; None         ; 19.198 ns  ; yima:inst18|out[6] ; out5[6] ; clkin      ;
+; N/A   ; None         ; 18.683 ns  ; yima:inst15|out[1] ; out6[1] ; clkin      ;
+; N/A   ; None         ; 18.462 ns  ; yima:inst15|out[2] ; out6[2] ; clkin      ;
+; N/A   ; None         ; 18.409 ns  ; yima:inst13|out[1] ; out8[1] ; clkin      ;
+; N/A   ; None         ; 17.932 ns  ; yima:inst13|out[0] ; out8[0] ; clkin      ;
+; N/A   ; None         ; 17.713 ns  ; yima:inst13|out[6] ; out8[6] ; clkin      ;
+; N/A   ; None         ; 17.650 ns  ; yima:inst15|out[6] ; out6[6] ; clkin      ;
+; N/A   ; None         ; 17.544 ns  ; yima:inst15|out[4] ; out6[4] ; clkin      ;
+; N/A   ; None         ; 17.152 ns  ; yima:inst13|out[5] ; out8[5] ; clkin      ;
+; N/A   ; None         ; 17.051 ns  ; yima:inst15|out[3] ; out6[3] ; clkin      ;
+; N/A   ; None         ; 16.932 ns  ; yima:inst15|out[5] ; out6[5] ; clkin      ;
+; N/A   ; None         ; 16.693 ns  ; yima:inst15|out[0] ; out6[0] ; clkin      ;
+; N/A   ; None         ; 16.568 ns  ; yima:inst13|out[2] ; out8[2] ; clkin      ;
+; N/A   ; None         ; 16.466 ns  ; yima:inst14|out[6] ; out7[6] ; clkin      ;
+; N/A   ; None         ; 16.306 ns  ; yima:inst13|out[4] ; out8[4] ; clkin      ;
+; N/A   ; None         ; 16.262 ns  ; yima:inst13|out[3] ; out8[3] ; clkin      ;
+; N/A   ; None         ; 16.215 ns  ; yima:inst14|out[6] ; out7[2] ; clkin      ;
+; N/A   ; None         ; 16.215 ns  ; yima:inst14|out[6] ; out7[3] ; clkin      ;
+; N/A   ; None         ; 16.195 ns  ; yima:inst14|out[6] ; out7[1] ; clkin      ;
+; N/A   ; None         ; 15.274 ns  ; yima:inst7|out[6]  ; out1[6] ; clkin      ;
+; N/A   ; None         ; 15.263 ns  ; yima:inst7|out[4]  ; out1[4] ; clkin      ;
+; N/A   ; None         ; 15.252 ns  ; yima:inst7|out[5]  ; out1[5] ; clkin      ;
+; N/A   ; None         ; 15.246 ns  ; yima:inst7|out[2]  ; out1[2] ; clkin      ;
+; N/A   ; None         ; 15.244 ns  ; yima:inst7|out[3]  ; out1[3] ; clkin      ;
+; N/A   ; None         ; 15.012 ns  ; yima:inst7|out[1]  ; out1[1] ; clkin      ;
+; N/A   ; None         ; 15.011 ns  ; yima:inst7|out[0]  ; out1[0] ; clkin      ;
+; N/A   ; None         ; 14.892 ns  ; yima:inst10|out[1] ; out3[1] ; clkin      ;
+; N/A   ; None         ; 14.873 ns  ; yima:inst8|out[6]  ; out2[6] ; clkin      ;
+; N/A   ; None         ; 14.849 ns  ; yima:inst10|out[0] ; out3[0] ; clkin      ;
+; N/A   ; None         ; 14.831 ns  ; yima:inst8|out[5]  ; out2[5] ; clkin      ;
+; N/A   ; None         ; 14.704 ns  ; yima:inst8|out[2]  ; out2[2] ; clkin      ;
+; N/A   ; None         ; 14.689 ns  ; yima:inst8|out[4]  ; out2[4] ; clkin      ;
+; N/A   ; None         ; 14.667 ns  ; yima:inst8|out[0]  ; out2[0] ; clkin      ;
+; N/A   ; None         ; 14.652 ns  ; yima:inst8|out[1]  ; out2[1] ; clkin      ;
+; N/A   ; None         ; 14.643 ns  ; yima:inst8|out[3]  ; out2[3] ; clkin      ;
+; N/A   ; None         ; 14.625 ns  ; yima:inst12|out[6] ; out4[6] ; clkin      ;
+; N/A   ; None         ; 14.624 ns  ; yima:inst12|out[0] ; out4[0] ; clkin      ;
+; N/A   ; None         ; 14.617 ns  ; yima:inst10|out[4] ; out3[4] ; clkin      ;
+; N/A   ; None         ; 14.611 ns  ; yima:inst12|out[1] ; out4[1] ; clkin      ;
+; N/A   ; None         ; 14.594 ns  ; yima:inst10|out[3] ; out3[3] ; clkin      ;
+; N/A   ; None         ; 14.578 ns  ; yima:inst10|out[5] ; out3[5] ; clkin      ;
+; N/A   ; None         ; 14.572 ns  ; yima:inst10|out[2] ; out3[2] ; clkin      ;
+; N/A   ; None         ; 14.570 ns  ; yima:inst10|out[6] ; out3[6] ; clkin      ;
+; N/A   ; None         ; 14.409 ns  ; yima:inst12|out[4] ; out4[4] ; clkin      ;
+; N/A   ; None         ; 14.408 ns  ; yima:inst12|out[5] ; out4[5] ; clkin      ;
+; N/A   ; None         ; 14.406 ns  ; yima:inst12|out[2] ; out4[2] ; clkin      ;
+; N/A   ; None         ; 14.366 ns  ; yima:inst12|out[3] ; out4[3] ; clkin      ;
+; N/A   ; None         ; 13.986 ns  ; led:inst21|led[0]  ; led[0]  ; clkin      ;
+; N/A   ; None         ; 13.971 ns  ; led:inst21|led[1]  ; led[1]  ; clkin      ;
+; N/A   ; None         ; 13.950 ns  ; led:inst21|led[2]  ; led[2]  ; clkin      ;
+; N/A   ; None         ; 13.775 ns  ; led:inst21|led[4]  ; led[4]  ; clkin      ;
+; N/A   ; None         ; 13.760 ns  ; led:inst21|led[5]  ; led[5]  ; clkin      ;
+; N/A   ; None         ; 13.754 ns  ; led:inst21|led[6]  ; led[6]  ; clkin      ;
+; N/A   ; None         ; 13.733 ns  ; led:inst21|led[3]  ; led[3]  ; clkin      ;
+; N/A   ; None         ; 13.702 ns  ; led:inst21|led[7]  ; led[7]  ; clkin      ;
++-------+--------------+------------+--------------------+---------+------------+
+
+
++-------------------------------------------------------------------------------------+
+; th                                                                                  ;
++---------------+-------------+-----------+--------+-----------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From   ; To                    ; To Clock ;
++---------------+-------------+-----------+--------+-----------------------+----------+
+; N/A           ; None        ; 2.230 ns  ; clkin2 ; qudou:inst17|count[1] ; clkin    ;
+; N/A           ; None        ; 2.226 ns  ; clkin2 ; qudou:inst17|count[2] ; clkin    ;
+; N/A           ; None        ; 2.204 ns  ; clkin2 ; qudou:inst17|count[0] ; clkin    ;
+; N/A           ; None        ; 2.201 ns  ; clkin2 ; qudou:inst17|count[3] ; clkin    ;
+; N/A           ; None        ; 2.143 ns  ; clkin3 ; qudou:inst16|count[2] ; clkin    ;
+; N/A           ; None        ; 2.118 ns  ; clkin3 ; qudou:inst16|count[3] ; clkin    ;
+; N/A           ; None        ; 2.117 ns  ; clkin3 ; qudou:inst16|count[0] ; clkin    ;
+; N/A           ; None        ; 2.115 ns  ; clkin3 ; qudou:inst16|count[1] ; clkin    ;
+; N/A           ; None        ; 2.084 ns  ; clkin2 ; qudou:inst17|clkout   ; clkin    ;
+; N/A           ; None        ; 1.937 ns  ; clkin3 ; qudou:inst16|clkout   ; clkin    ;
+; N/A           ; None        ; 1.650 ns  ; rst    ; qudou:inst6|count[2]  ; clkin    ;
+; N/A           ; None        ; 1.646 ns  ; rst    ; qudou:inst6|count[1]  ; clkin    ;
+; N/A           ; None        ; 1.625 ns  ; rst    ; qudou:inst6|count[3]  ; clkin    ;
+; N/A           ; None        ; 1.622 ns  ; rst    ; qudou:inst6|count[0]  ; clkin    ;
+; N/A           ; None        ; 1.426 ns  ; rst    ; qudou:inst6|clkout    ; clkin    ;
++---------------+-------------+-----------+--------+-----------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 8.0 Build 215 05/29/2008 SJ Full Version
+    Info: Processing started: Sat Dec 05 16:08:57 2020
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off homework -c homework --timing_analysis_only
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clkin" is an undefined clock
+Warning: Found 5 node(s) in clock paths which may be acting as ripple and/or gated clocks -- node(s) analyzed as buffer(s) resulting in clock skew
+    Info: Detected ripple clock "fenpin10:inst5|out" as buffer
+    Info: Detected ripple clock "fenpin100:inst1|out" as buffer
+    Info: Detected ripple clock "fenpin50:inst3|out" as buffer
+    Info: Detected ripple clock "fenpin10:inst4|out" as buffer
+    Info: Detected ripple clock "fenpin100:inst2|out" as buffer
+Info: Clock "clkin" has Internal fmax of 112.36 MHz between source register "qudou:inst17|clkout" and destination register "homework:inst|scorea2[0]" (period= 8.9 ns)
+    Info: + Longest register to register delay is 2.752 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X58_Y26_N17; Fanout = 6; REG Node = 'qudou:inst17|clkout'
+        Info: 2: + IC(0.527 ns) + CELL(0.245 ns) = 0.772 ns; Loc. = LCCOMB_X58_Y25_N2; Fanout = 1; COMB Node = 'homework:inst|scorea2[1]~158'
+        Info: 3: + IC(0.737 ns) + CELL(0.150 ns) = 1.659 ns; Loc. = LCCOMB_X57_Y26_N26; Fanout = 4; COMB Node = 'homework:inst|scorea2[1]~159'
+        Info: 4: + IC(0.433 ns) + CELL(0.660 ns) = 2.752 ns; Loc. = LCFF_X56_Y26_N21; Fanout = 9; REG Node = 'homework:inst|scorea2[0]'
+        Info: Total cell delay = 1.055 ns ( 38.34 % )
+        Info: Total interconnect delay = 1.697 ns ( 61.66 % )
+    Info: - Smallest clock skew is -5.934 ns
+        Info: + Shortest clock path from clock "clkin" to destination register is 2.656 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_N2; Fanout = 2; CLK Node = 'clkin'
+            Info: 2: + IC(0.118 ns) + CELL(0.000 ns) = 1.117 ns; Loc. = CLKCTRL_G2; Fanout = 51; COMB Node = 'clkin~clkctrl'
+            Info: 3: + IC(1.002 ns) + CELL(0.537 ns) = 2.656 ns; Loc. = LCFF_X56_Y26_N21; Fanout = 9; REG Node = 'homework:inst|scorea2[0]'
+            Info: Total cell delay = 1.536 ns ( 57.83 % )
+            Info: Total interconnect delay = 1.120 ns ( 42.17 % )
+        Info: - Longest clock path from clock "clkin" to source register is 8.590 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_N2; Fanout = 2; CLK Node = 'clkin'
+            Info: 2: + IC(0.331 ns) + CELL(0.787 ns) = 2.117 ns; Loc. = LCFF_X1_Y18_N1; Fanout = 3; REG Node = 'fenpin100:inst1|out'
+            Info: 3: + IC(0.471 ns) + CELL(0.787 ns) = 3.375 ns; Loc. = LCFF_X2_Y18_N9; Fanout = 3; REG Node = 'fenpin50:inst3|out'
+            Info: 4: + IC(1.980 ns) + CELL(0.787 ns) = 6.142 ns; Loc. = LCFF_X32_Y2_N17; Fanout = 3; REG Node = 'fenpin10:inst4|out'
+            Info: 5: + IC(0.924 ns) + CELL(0.000 ns) = 7.066 ns; Loc. = CLKCTRL_G14; Fanout = 23; COMB Node = 'fenpin10:inst4|out~clkctrl'
+            Info: 6: + IC(0.987 ns) + CELL(0.537 ns) = 8.590 ns; Loc. = LCFF_X58_Y26_N17; Fanout = 6; REG Node = 'qudou:inst17|clkout'
+            Info: Total cell delay = 3.897 ns ( 45.37 % )
+            Info: Total interconnect delay = 4.693 ns ( 54.63 % )
+    Info: + Micro clock to output delay of source is 0.250 ns
+    Info: + Micro setup delay of destination is -0.036 ns
+Warning: Circuit may not operate. Detected 198 non-operational path(s) clocked by clock "clkin" with clock skew larger than data delay. See Compilation Report for details.
+Info: Found hold time violation between source  pin or register "homework:inst|sumb[3]" and destination pin or register "yima:inst14|out[6]" for clock "clkin" (Hold time is 7.775 ns)
+    Info: + Largest clock skew is 8.325 ns
+        Info: + Longest clock path from clock "clkin" to destination register is 10.989 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_N2; Fanout = 2; CLK Node = 'clkin'
+            Info: 2: + IC(0.331 ns) + CELL(0.787 ns) = 2.117 ns; Loc. = LCFF_X1_Y18_N1; Fanout = 3; REG Node = 'fenpin100:inst1|out'
+            Info: 3: + IC(0.471 ns) + CELL(0.787 ns) = 3.375 ns; Loc. = LCFF_X2_Y18_N9; Fanout = 3; REG Node = 'fenpin50:inst3|out'
+            Info: 4: + IC(1.980 ns) + CELL(0.787 ns) = 6.142 ns; Loc. = LCFF_X32_Y2_N17; Fanout = 3; REG Node = 'fenpin10:inst4|out'
+            Info: 5: + IC(0.493 ns) + CELL(0.787 ns) = 7.422 ns; Loc. = LCFF_X32_Y1_N25; Fanout = 3; REG Node = 'fenpin100:inst2|out'
+            Info: 6: + IC(0.492 ns) + CELL(0.787 ns) = 8.701 ns; Loc. = LCFF_X33_Y1_N17; Fanout = 2; REG Node = 'fenpin10:inst5|out'
+            Info: 7: + IC(0.754 ns) + CELL(0.000 ns) = 9.455 ns; Loc. = CLKCTRL_G13; Fanout = 44; COMB Node = 'fenpin10:inst5|out~clkctrl'
+            Info: 8: + IC(0.997 ns) + CELL(0.537 ns) = 10.989 ns; Loc. = LCFF_X57_Y25_N9; Fanout = 4; REG Node = 'yima:inst14|out[6]'
+            Info: Total cell delay = 5.471 ns ( 49.79 % )
+            Info: Total interconnect delay = 5.518 ns ( 50.21 % )
+        Info: - Shortest clock path from clock "clkin" to source register is 2.664 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_N2; Fanout = 2; CLK Node = 'clkin'
+            Info: 2: + IC(0.118 ns) + CELL(0.000 ns) = 1.117 ns; Loc. = CLKCTRL_G2; Fanout = 51; COMB Node = 'clkin~clkctrl'
+            Info: 3: + IC(1.010 ns) + CELL(0.537 ns) = 2.664 ns; Loc. = LCFF_X57_Y25_N7; Fanout = 7; REG Node = 'homework:inst|sumb[3]'
+            Info: Total cell delay = 1.536 ns ( 57.66 % )
+            Info: Total interconnect delay = 1.128 ns ( 42.34 % )
+    Info: - Micro clock to output delay of source is 0.250 ns
+    Info: - Shortest register to register delay is 0.566 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X57_Y25_N7; Fanout = 7; REG Node = 'homework:inst|sumb[3]'
+        Info: 2: + IC(0.332 ns) + CELL(0.150 ns) = 0.482 ns; Loc. = LCCOMB_X57_Y25_N8; Fanout = 6; COMB Node = 'flag:inst19|LessThan0~59'
+        Info: 3: + IC(0.000 ns) + CELL(0.084 ns) = 0.566 ns; Loc. = LCFF_X57_Y25_N9; Fanout = 4; REG Node = 'yima:inst14|out[6]'
+        Info: Total cell delay = 0.234 ns ( 41.34 % )
+        Info: Total interconnect delay = 0.332 ns ( 58.66 % )
+    Info: + Micro hold delay of destination is 0.266 ns
+Info: tsu for register "qudou:inst6|clkout" (data pin = "rst", clock pin = "clkin") is -1.196 ns
+    Info: + Longest pin to register delay is 7.430 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.862 ns) = 0.862 ns; Loc. = PIN_W26; Fanout = 6; PIN Node = 'rst'
+        Info: 2: + IC(6.334 ns) + CELL(0.150 ns) = 7.346 ns; Loc. = LCCOMB_X57_Y26_N16; Fanout = 1; COMB Node = 'qudou:inst6|clkout~47'
+        Info: 3: + IC(0.000 ns) + CELL(0.084 ns) = 7.430 ns; Loc. = LCFF_X57_Y26_N17; Fanout = 36; REG Node = 'qudou:inst6|clkout'
+        Info: Total cell delay = 1.096 ns ( 14.75 % )
+        Info: Total interconnect delay = 6.334 ns ( 85.25 % )
+    Info: + Micro setup delay of destination is -0.036 ns
+    Info: - Shortest clock path from clock "clkin" to destination register is 8.590 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_N2; Fanout = 2; CLK Node = 'clkin'
+        Info: 2: + IC(0.331 ns) + CELL(0.787 ns) = 2.117 ns; Loc. = LCFF_X1_Y18_N1; Fanout = 3; REG Node = 'fenpin100:inst1|out'
+        Info: 3: + IC(0.471 ns) + CELL(0.787 ns) = 3.375 ns; Loc. = LCFF_X2_Y18_N9; Fanout = 3; REG Node = 'fenpin50:inst3|out'
+        Info: 4: + IC(1.980 ns) + CELL(0.787 ns) = 6.142 ns; Loc. = LCFF_X32_Y2_N17; Fanout = 3; REG Node = 'fenpin10:inst4|out'
+        Info: 5: + IC(0.924 ns) + CELL(0.000 ns) = 7.066 ns; Loc. = CLKCTRL_G14; Fanout = 23; COMB Node = 'fenpin10:inst4|out~clkctrl'
+        Info: 6: + IC(0.987 ns) + CELL(0.537 ns) = 8.590 ns; Loc. = LCFF_X57_Y26_N17; Fanout = 36; REG Node = 'qudou:inst6|clkout'
+        Info: Total cell delay = 3.897 ns ( 45.37 % )
+        Info: Total interconnect delay = 4.693 ns ( 54.63 % )
+Info: tco from clock "clkin" to destination pin "out5[1]" through register "yima:inst18|out[6]" is 19.223 ns
+    Info: + Longest clock path from clock "clkin" to source register is 10.982 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_N2; Fanout = 2; CLK Node = 'clkin'
+        Info: 2: + IC(0.331 ns) + CELL(0.787 ns) = 2.117 ns; Loc. = LCFF_X1_Y18_N1; Fanout = 3; REG Node = 'fenpin100:inst1|out'
+        Info: 3: + IC(0.471 ns) + CELL(0.787 ns) = 3.375 ns; Loc. = LCFF_X2_Y18_N9; Fanout = 3; REG Node = 'fenpin50:inst3|out'
+        Info: 4: + IC(1.980 ns) + CELL(0.787 ns) = 6.142 ns; Loc. = LCFF_X32_Y2_N17; Fanout = 3; REG Node = 'fenpin10:inst4|out'
+        Info: 5: + IC(0.493 ns) + CELL(0.787 ns) = 7.422 ns; Loc. = LCFF_X32_Y1_N25; Fanout = 3; REG Node = 'fenpin100:inst2|out'
+        Info: 6: + IC(0.492 ns) + CELL(0.787 ns) = 8.701 ns; Loc. = LCFF_X33_Y1_N17; Fanout = 2; REG Node = 'fenpin10:inst5|out'
+        Info: 7: + IC(0.754 ns) + CELL(0.000 ns) = 9.455 ns; Loc. = CLKCTRL_G13; Fanout = 44; COMB Node = 'fenpin10:inst5|out~clkctrl'
+        Info: 8: + IC(0.990 ns) + CELL(0.537 ns) = 10.982 ns; Loc. = LCFF_X59_Y26_N11; Fanout = 4; REG Node = 'yima:inst18|out[6]'
+        Info: Total cell delay = 5.471 ns ( 49.82 % )
+        Info: Total interconnect delay = 5.511 ns ( 50.18 % )
+    Info: + Micro clock to output delay of source is 0.250 ns
+    Info: + Longest register to pin delay is 7.991 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X59_Y26_N11; Fanout = 4; REG Node = 'yima:inst18|out[6]'
+        Info: 2: + IC(5.349 ns) + CELL(2.642 ns) = 7.991 ns; Loc. = PIN_R6; Fanout = 0; PIN Node = 'out5[1]'
+        Info: Total cell delay = 2.642 ns ( 33.06 % )
+        Info: Total interconnect delay = 5.349 ns ( 66.94 % )
+Info: th for register "qudou:inst17|count[1]" (data pin = "clkin2", clock pin = "clkin") is 2.230 ns
+    Info: + Longest clock path from clock "clkin" to destination register is 8.599 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_N2; Fanout = 2; CLK Node = 'clkin'
+        Info: 2: + IC(0.331 ns) + CELL(0.787 ns) = 2.117 ns; Loc. = LCFF_X1_Y18_N1; Fanout = 3; REG Node = 'fenpin100:inst1|out'
+        Info: 3: + IC(0.471 ns) + CELL(0.787 ns) = 3.375 ns; Loc. = LCFF_X2_Y18_N9; Fanout = 3; REG Node = 'fenpin50:inst3|out'
+        Info: 4: + IC(1.980 ns) + CELL(0.787 ns) = 6.142 ns; Loc. = LCFF_X32_Y2_N17; Fanout = 3; REG Node = 'fenpin10:inst4|out'
+        Info: 5: + IC(0.924 ns) + CELL(0.000 ns) = 7.066 ns; Loc. = CLKCTRL_G14; Fanout = 23; COMB Node = 'fenpin10:inst4|out~clkctrl'
+        Info: 6: + IC(0.996 ns) + CELL(0.537 ns) = 8.599 ns; Loc. = LCFF_X59_Y25_N27; Fanout = 3; REG Node = 'qudou:inst17|count[1]'
+        Info: Total cell delay = 3.897 ns ( 45.32 % )
+        Info: Total interconnect delay = 4.702 ns ( 54.68 % )
+    Info: + Micro hold delay of destination is 0.266 ns
+    Info: - Shortest pin to register delay is 6.635 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.842 ns) = 0.842 ns; Loc. = PIN_N23; Fanout = 5; PIN Node = 'clkin2'
+        Info: 2: + IC(5.296 ns) + CELL(0.413 ns) = 6.551 ns; Loc. = LCCOMB_X59_Y25_N26; Fanout = 1; COMB Node = 'qudou:inst17|count~214'
+        Info: 3: + IC(0.000 ns) + CELL(0.084 ns) = 6.635 ns; Loc. = LCFF_X59_Y25_N27; Fanout = 3; REG Node = 'qudou:inst17|count[1]'
+        Info: Total cell delay = 1.339 ns ( 20.18 % )
+        Info: Total interconnect delay = 5.296 ns ( 79.82 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 191 megabytes
+    Info: Processing ended: Sat Dec 05 16:08:57 2020
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+

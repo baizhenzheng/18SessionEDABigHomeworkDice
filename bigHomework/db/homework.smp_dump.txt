@@ -1,0 +1,16 @@
+
+State Machine - |Block1|homework:inst|state1
+Name state1.s9 state1.s8 state1.s7 state1.s6 state1.s5 
+state1.s5 0 0 0 0 0 
+state1.s6 0 0 0 1 1 
+state1.s7 0 0 1 0 1 
+state1.s8 0 1 0 0 1 
+state1.s9 1 0 0 0 1 
+
+State Machine - |Block1|homework:inst|state
+Name state.s3 state.s2 state.s1 state.s0 state.s4 
+state.s0 0 0 0 0 0 
+state.s1 0 0 1 1 0 
+state.s2 0 1 0 1 0 
+state.s3 1 0 0 1 0 
+state.s4 0 0 0 1 1 

@@ -1,0 +1,601 @@
+|Block1
+led[0] <= led:inst21.led[0]
+led[1] <= led:inst21.led[1]
+led[2] <= led:inst21.led[2]
+led[3] <= led:inst21.led[3]
+led[4] <= led:inst21.led[4]
+led[5] <= led:inst21.led[5]
+led[6] <= led:inst21.led[6]
+led[7] <= led:inst21.led[7]
+clkin => fenpin100:inst1.clkin
+clkin => homework:inst.clkin
+clkin => calculator:inst11.clk
+rst => qudou:inst6.clkin
+rst => calculator:inst11.rst
+clkin2 => qudou:inst17.clkin
+clkin3 => qudou:inst16.clkin
+out1[0] <= yima:inst7.out[0]
+out1[1] <= yima:inst7.out[1]
+out1[2] <= yima:inst7.out[2]
+out1[3] <= yima:inst7.out[3]
+out1[4] <= yima:inst7.out[4]
+out1[5] <= yima:inst7.out[5]
+out1[6] <= yima:inst7.out[6]
+out2[0] <= yima:inst8.out[0]
+out2[1] <= yima:inst8.out[1]
+out2[2] <= yima:inst8.out[2]
+out2[3] <= yima:inst8.out[3]
+out2[4] <= yima:inst8.out[4]
+out2[5] <= yima:inst8.out[5]
+out2[6] <= yima:inst8.out[6]
+out3[0] <= yima:inst10.out[0]
+out3[1] <= yima:inst10.out[1]
+out3[2] <= yima:inst10.out[2]
+out3[3] <= yima:inst10.out[3]
+out3[4] <= yima:inst10.out[4]
+out3[5] <= yima:inst10.out[5]
+out3[6] <= yima:inst10.out[6]
+out4[0] <= yima:inst12.out[0]
+out4[1] <= yima:inst12.out[1]
+out4[2] <= yima:inst12.out[2]
+out4[3] <= yima:inst12.out[3]
+out4[4] <= yima:inst12.out[4]
+out4[5] <= yima:inst12.out[5]
+out4[6] <= yima:inst12.out[6]
+out5[0] <= yima:inst18.out[0]
+out5[1] <= yima:inst18.out[1]
+out5[2] <= yima:inst18.out[2]
+out5[3] <= yima:inst18.out[3]
+out5[4] <= yima:inst18.out[4]
+out5[5] <= yima:inst18.out[5]
+out5[6] <= yima:inst18.out[6]
+out6[0] <= yima:inst15.out[0]
+out6[1] <= yima:inst15.out[1]
+out6[2] <= yima:inst15.out[2]
+out6[3] <= yima:inst15.out[3]
+out6[4] <= yima:inst15.out[4]
+out6[5] <= yima:inst15.out[5]
+out6[6] <= yima:inst15.out[6]
+out7[0] <= yima:inst14.out[0]
+out7[1] <= yima:inst14.out[1]
+out7[2] <= yima:inst14.out[2]
+out7[3] <= yima:inst14.out[3]
+out7[4] <= yima:inst14.out[4]
+out7[5] <= yima:inst14.out[5]
+out7[6] <= yima:inst14.out[6]
+out8[0] <= yima:inst13.out[0]
+out8[1] <= yima:inst13.out[1]
+out8[2] <= yima:inst13.out[2]
+out8[3] <= yima:inst13.out[3]
+out8[4] <= yima:inst13.out[4]
+out8[5] <= yima:inst13.out[5]
+out8[6] <= yima:inst13.out[6]
+
+
+|Block1|led:inst21
+clk => ledstate[4].CLK
+clk => ledstate[3].CLK
+clk => ledstate[2].CLK
+clk => ledstate[1].CLK
+clk => ledstate[0].CLK
+clk => led[7]~reg0.CLK
+clk => led[6]~reg0.CLK
+clk => led[5]~reg0.CLK
+clk => led[4]~reg0.CLK
+clk => led[3]~reg0.CLK
+clk => led[2]~reg0.CLK
+clk => led[1]~reg0.CLK
+clk => led[0]~reg0.CLK
+led[0] <= led[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+led[1] <= led[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+led[2] <= led[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+led[3] <= led[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+led[4] <= led[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+led[5] <= led[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+led[6] <= led[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+led[7] <= led[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+win[0] => Equal0.IN0
+win[0] => Equal1.IN30
+win[1] => Equal0.IN30
+win[1] => Equal1.IN0
+win[2] => Equal0.IN31
+win[2] => Equal1.IN31
+
+
+|Block1|fenpin100:inst2
+clkin => out~reg0.CLK
+clkin => num1[7].CLK
+clkin => num1[6].CLK
+clkin => num1[5].CLK
+clkin => num1[4].CLK
+clkin => num1[3].CLK
+clkin => num1[2].CLK
+clkin => num1[1].CLK
+clkin => num1[0].CLK
+out <= out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Block1|fenpin10:inst4
+clkin => out~reg0.CLK
+clkin => num1[2].CLK
+clkin => num1[1].CLK
+clkin => num1[0].CLK
+out <= out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Block1|fenpin50:inst3
+clkin => out~reg0.CLK
+clkin => num1[5].CLK
+clkin => num1[4].CLK
+clkin => num1[3].CLK
+clkin => num1[2].CLK
+clkin => num1[1].CLK
+clkin => num1[0].CLK
+out <= out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Block1|fenpin100:inst1
+clkin => out~reg0.CLK
+clkin => num1[7].CLK
+clkin => num1[6].CLK
+clkin => num1[5].CLK
+clkin => num1[4].CLK
+clkin => num1[3].CLK
+clkin => num1[2].CLK
+clkin => num1[1].CLK
+clkin => num1[0].CLK
+out <= out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Block1|homework:inst
+clkin => win[2]~reg0.CLK
+clkin => win[1]~reg0.CLK
+clkin => win[0]~reg0.CLK
+clkin => flag.CLK
+clkin => scorea1[3]~reg0.CLK
+clkin => scorea1[2]~reg0.CLK
+clkin => scorea1[1]~reg0.CLK
+clkin => scorea1[0]~reg0.CLK
+clkin => scorea2[3]~reg0.CLK
+clkin => scorea2[2]~reg0.CLK
+clkin => scorea2[1]~reg0.CLK
+clkin => scorea2[0]~reg0.CLK
+clkin => scoreb1[3]~reg0.CLK
+clkin => scoreb1[2]~reg0.CLK
+clkin => scoreb1[1]~reg0.CLK
+clkin => scoreb1[0]~reg0.CLK
+clkin => scoreb2[3]~reg0.CLK
+clkin => scoreb2[2]~reg0.CLK
+clkin => scoreb2[1]~reg0.CLK
+clkin => scoreb2[0]~reg0.CLK
+clkin => suma[4]~reg0.CLK
+clkin => suma[3]~reg0.CLK
+clkin => suma[2]~reg0.CLK
+clkin => suma[1]~reg0.CLK
+clkin => suma[0]~reg0.CLK
+clkin => sumb[4]~reg0.CLK
+clkin => sumb[3]~reg0.CLK
+clkin => sumb[2]~reg0.CLK
+clkin => sumb[1]~reg0.CLK
+clkin => sumb[0]~reg0.CLK
+clkin => state1~49.IN1
+clkin => state~24.IN1
+reset => sumb~44.OUTPUTSELECT
+reset => sumb~43.OUTPUTSELECT
+reset => sumb~42.OUTPUTSELECT
+reset => sumb~41.OUTPUTSELECT
+reset => sumb~40.OUTPUTSELECT
+reset => suma~44.OUTPUTSELECT
+reset => suma~43.OUTPUTSELECT
+reset => suma~42.OUTPUTSELECT
+reset => suma~41.OUTPUTSELECT
+reset => suma~40.OUTPUTSELECT
+reset => scoreb2~19.OUTPUTSELECT
+reset => scoreb2~18.OUTPUTSELECT
+reset => scoreb2~17.OUTPUTSELECT
+reset => scoreb2~16.OUTPUTSELECT
+reset => scoreb1~19.OUTPUTSELECT
+reset => scoreb1~18.OUTPUTSELECT
+reset => scoreb1~17.OUTPUTSELECT
+reset => scoreb1~16.OUTPUTSELECT
+reset => scorea2~19.OUTPUTSELECT
+reset => scorea2~18.OUTPUTSELECT
+reset => scorea2~17.OUTPUTSELECT
+reset => scorea2~16.OUTPUTSELECT
+reset => scorea1~19.OUTPUTSELECT
+reset => scorea1~18.OUTPUTSELECT
+reset => scorea1~17.OUTPUTSELECT
+reset => scorea1~16.OUTPUTSELECT
+reset => flag~5.OUTPUTSELECT
+reset => state1~48.OUTPUTSELECT
+reset => state1~47.OUTPUTSELECT
+reset => state1~46.OUTPUTSELECT
+reset => state1~45.OUTPUTSELECT
+reset => state1~44.OUTPUTSELECT
+reset => state~23.OUTPUTSELECT
+reset => state~22.OUTPUTSELECT
+reset => state~21.OUTPUTSELECT
+reset => state~20.OUTPUTSELECT
+reset => state~19.OUTPUTSELECT
+reset => win~35.OUTPUTSELECT
+reset => win~34.OUTPUTSELECT
+reset => win~33.OUTPUTSELECT
+count[0] => scoreb2~7.DATAB
+count[0] => scorea2~7.DATAB
+count[0] => scoreb1~7.DATAB
+count[0] => scorea1~7.DATAB
+count[1] => scoreb2~6.DATAB
+count[1] => scorea2~6.DATAB
+count[1] => scoreb1~6.DATAB
+count[1] => scorea1~6.DATAB
+count[2] => scoreb2~5.DATAB
+count[2] => scorea2~5.DATAB
+count[2] => scoreb1~5.DATAB
+count[2] => scorea1~5.DATAB
+count[3] => scoreb2~4.DATAB
+count[3] => scorea2~4.DATAB
+count[3] => scoreb1~4.DATAB
+count[3] => scorea1~4.DATAB
+throwa => state~10.OUTPUTSELECT
+throwa => state~11.OUTPUTSELECT
+throwa => scorea2~4.OUTPUTSELECT
+throwa => scorea2~5.OUTPUTSELECT
+throwa => scorea2~6.OUTPUTSELECT
+throwa => scorea2~7.OUTPUTSELECT
+throwa => state1~10.OUTPUTSELECT
+throwa => state1~11.OUTPUTSELECT
+throwa => state~0.OUTPUTSELECT
+throwa => state~1.OUTPUTSELECT
+throwa => state~2.OUTPUTSELECT
+throwa => state~3.OUTPUTSELECT
+throwa => state~4.OUTPUTSELECT
+throwa => state1~4.OUTPUTSELECT
+throwa => state1~3.OUTPUTSELECT
+throwa => state1~2.OUTPUTSELECT
+throwa => state1~1.OUTPUTSELECT
+throwa => state1~0.OUTPUTSELECT
+throwa => scorea1~7.OUTPUTSELECT
+throwa => scorea1~6.OUTPUTSELECT
+throwa => scorea1~5.OUTPUTSELECT
+throwa => scorea1~4.OUTPUTSELECT
+throwb => state~12.OUTPUTSELECT
+throwb => state~13.OUTPUTSELECT
+throwb => scoreb2~4.OUTPUTSELECT
+throwb => scoreb2~5.OUTPUTSELECT
+throwb => scoreb2~6.OUTPUTSELECT
+throwb => scoreb2~7.OUTPUTSELECT
+throwb => state1~12.OUTPUTSELECT
+throwb => state1~13.OUTPUTSELECT
+throwb => state~5.OUTPUTSELECT
+throwb => state~6.OUTPUTSELECT
+throwb => state~7.OUTPUTSELECT
+throwb => state~8.OUTPUTSELECT
+throwb => state~9.OUTPUTSELECT
+throwb => state1~9.OUTPUTSELECT
+throwb => state1~8.OUTPUTSELECT
+throwb => state1~7.OUTPUTSELECT
+throwb => state1~6.OUTPUTSELECT
+throwb => state1~5.OUTPUTSELECT
+throwb => scoreb1~7.OUTPUTSELECT
+throwb => scoreb1~6.OUTPUTSELECT
+throwb => scoreb1~5.OUTPUTSELECT
+throwb => scoreb1~4.OUTPUTSELECT
+scorea1[0] <= scorea1[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+scorea1[1] <= scorea1[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+scorea1[2] <= scorea1[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+scorea1[3] <= scorea1[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+scorea2[0] <= scorea2[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+scorea2[1] <= scorea2[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+scorea2[2] <= scorea2[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+scorea2[3] <= scorea2[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+scoreb1[0] <= scoreb1[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+scoreb1[1] <= scoreb1[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+scoreb1[2] <= scoreb1[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+scoreb1[3] <= scoreb1[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+scoreb2[0] <= scoreb2[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+scoreb2[1] <= scoreb2[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+scoreb2[2] <= scoreb2[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+scoreb2[3] <= scoreb2[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+win[0] <= win[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+win[1] <= win[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+win[2] <= win[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+suma[0] <= suma[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+suma[1] <= suma[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+suma[2] <= suma[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+suma[3] <= suma[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+suma[4] <= suma[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+sumb[0] <= sumb[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+sumb[1] <= sumb[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+sumb[2] <= sumb[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+sumb[3] <= sumb[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+sumb[4] <= sumb[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Block1|qudou:inst6
+clock => count[3].CLK
+clock => count[2].CLK
+clock => count[1].CLK
+clock => count[0].CLK
+clock => clkout~reg0.CLK
+clkin => clkout~1.OUTPUTSELECT
+clkin => count~7.OUTPUTSELECT
+clkin => count~6.OUTPUTSELECT
+clkin => count~5.OUTPUTSELECT
+clkin => count~4.OUTPUTSELECT
+clkin => clkout~0.DATAA
+clkout <= clkout~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Block1|qudou:inst17
+clock => count[3].CLK
+clock => count[2].CLK
+clock => count[1].CLK
+clock => count[0].CLK
+clock => clkout~reg0.CLK
+clkin => clkout~1.OUTPUTSELECT
+clkin => count~7.OUTPUTSELECT
+clkin => count~6.OUTPUTSELECT
+clkin => count~5.OUTPUTSELECT
+clkin => count~4.OUTPUTSELECT
+clkin => clkout~0.DATAA
+clkout <= clkout~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Block1|qudou:inst16
+clock => count[3].CLK
+clock => count[2].CLK
+clock => count[1].CLK
+clock => count[0].CLK
+clock => clkout~reg0.CLK
+clkin => clkout~1.OUTPUTSELECT
+clkin => count~7.OUTPUTSELECT
+clkin => count~6.OUTPUTSELECT
+clkin => count~5.OUTPUTSELECT
+clkin => count~4.OUTPUTSELECT
+clkin => clkout~0.DATAA
+clkout <= clkout~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Block1|calculator:inst11
+clk => count[3]~reg0.CLK
+clk => count[2]~reg0.CLK
+clk => count[1]~reg0.CLK
+clk => count[0]~reg0.CLK
+rst => count[3]~reg0.ACLR
+rst => count[2]~reg0.ACLR
+rst => count[1]~reg0.ACLR
+rst => count[0]~reg0.PRESET
+count[0] <= count[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[1] <= count[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[2] <= count[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[3] <= count[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Block1|yima:inst7
+clk => out[6]~reg0.CLK
+clk => out[5]~reg0.CLK
+clk => out[4]~reg0.CLK
+clk => out[3]~reg0.CLK
+clk => out[2]~reg0.CLK
+clk => out[1]~reg0.CLK
+clk => out[0]~reg0.CLK
+data[0] => Decoder0.IN3
+data[1] => Decoder0.IN2
+data[2] => Decoder0.IN1
+data[3] => Decoder0.IN0
+out[0] <= out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Block1|fenpin10:inst5
+clkin => out~reg0.CLK
+clkin => num1[2].CLK
+clkin => num1[1].CLK
+clkin => num1[0].CLK
+out <= out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Block1|yima:inst8
+clk => out[6]~reg0.CLK
+clk => out[5]~reg0.CLK
+clk => out[4]~reg0.CLK
+clk => out[3]~reg0.CLK
+clk => out[2]~reg0.CLK
+clk => out[1]~reg0.CLK
+clk => out[0]~reg0.CLK
+data[0] => Decoder0.IN3
+data[1] => Decoder0.IN2
+data[2] => Decoder0.IN1
+data[3] => Decoder0.IN0
+out[0] <= out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Block1|yima:inst10
+clk => out[6]~reg0.CLK
+clk => out[5]~reg0.CLK
+clk => out[4]~reg0.CLK
+clk => out[3]~reg0.CLK
+clk => out[2]~reg0.CLK
+clk => out[1]~reg0.CLK
+clk => out[0]~reg0.CLK
+data[0] => Decoder0.IN3
+data[1] => Decoder0.IN2
+data[2] => Decoder0.IN1
+data[3] => Decoder0.IN0
+out[0] <= out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Block1|yima:inst12
+clk => out[6]~reg0.CLK
+clk => out[5]~reg0.CLK
+clk => out[4]~reg0.CLK
+clk => out[3]~reg0.CLK
+clk => out[2]~reg0.CLK
+clk => out[1]~reg0.CLK
+clk => out[0]~reg0.CLK
+data[0] => Decoder0.IN3
+data[1] => Decoder0.IN2
+data[2] => Decoder0.IN1
+data[3] => Decoder0.IN0
+out[0] <= out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Block1|yima:inst18
+clk => out[6]~reg0.CLK
+clk => out[5]~reg0.CLK
+clk => out[4]~reg0.CLK
+clk => out[3]~reg0.CLK
+clk => out[2]~reg0.CLK
+clk => out[1]~reg0.CLK
+clk => out[0]~reg0.CLK
+data[0] => Decoder0.IN3
+data[1] => Decoder0.IN2
+data[2] => Decoder0.IN1
+data[3] => Decoder0.IN0
+out[0] <= out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Block1|flag:inst9
+clk => ~NO_FANOUT~
+sum[0] => low~3.DATAA
+sum[0] => Mod0.IN8
+sum[0] => LessThan0.IN10
+sum[1] => low~2.DATAA
+sum[1] => Mod0.IN7
+sum[1] => LessThan0.IN9
+sum[2] => low~1.DATAA
+sum[2] => Mod0.IN6
+sum[2] => LessThan0.IN8
+sum[3] => low~0.DATAA
+sum[3] => Mod0.IN5
+sum[3] => LessThan0.IN7
+sum[4] => Mod0.IN4
+sum[4] => LessThan0.IN6
+high[0] <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+high[1] <= <GND>
+high[2] <= <GND>
+high[3] <= <GND>
+low[0] <= low~3.DB_MAX_OUTPUT_PORT_TYPE
+low[1] <= low~2.DB_MAX_OUTPUT_PORT_TYPE
+low[2] <= low~1.DB_MAX_OUTPUT_PORT_TYPE
+low[3] <= low~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Block1|yima:inst15
+clk => out[6]~reg0.CLK
+clk => out[5]~reg0.CLK
+clk => out[4]~reg0.CLK
+clk => out[3]~reg0.CLK
+clk => out[2]~reg0.CLK
+clk => out[1]~reg0.CLK
+clk => out[0]~reg0.CLK
+data[0] => Decoder0.IN3
+data[1] => Decoder0.IN2
+data[2] => Decoder0.IN1
+data[3] => Decoder0.IN0
+out[0] <= out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Block1|yima:inst14
+clk => out[6]~reg0.CLK
+clk => out[5]~reg0.CLK
+clk => out[4]~reg0.CLK
+clk => out[3]~reg0.CLK
+clk => out[2]~reg0.CLK
+clk => out[1]~reg0.CLK
+clk => out[0]~reg0.CLK
+data[0] => Decoder0.IN3
+data[1] => Decoder0.IN2
+data[2] => Decoder0.IN1
+data[3] => Decoder0.IN0
+out[0] <= out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Block1|flag:inst19
+clk => ~NO_FANOUT~
+sum[0] => low~3.DATAA
+sum[0] => Mod0.IN8
+sum[0] => LessThan0.IN10
+sum[1] => low~2.DATAA
+sum[1] => Mod0.IN7
+sum[1] => LessThan0.IN9
+sum[2] => low~1.DATAA
+sum[2] => Mod0.IN6
+sum[2] => LessThan0.IN8
+sum[3] => low~0.DATAA
+sum[3] => Mod0.IN5
+sum[3] => LessThan0.IN7
+sum[4] => Mod0.IN4
+sum[4] => LessThan0.IN6
+high[0] <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+high[1] <= <GND>
+high[2] <= <GND>
+high[3] <= <GND>
+low[0] <= low~3.DB_MAX_OUTPUT_PORT_TYPE
+low[1] <= low~2.DB_MAX_OUTPUT_PORT_TYPE
+low[2] <= low~1.DB_MAX_OUTPUT_PORT_TYPE
+low[3] <= low~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Block1|yima:inst13
+clk => out[6]~reg0.CLK
+clk => out[5]~reg0.CLK
+clk => out[4]~reg0.CLK
+clk => out[3]~reg0.CLK
+clk => out[2]~reg0.CLK
+clk => out[1]~reg0.CLK
+clk => out[0]~reg0.CLK
+data[0] => Decoder0.IN3
+data[1] => Decoder0.IN2
+data[2] => Decoder0.IN1
+data[3] => Decoder0.IN0
+out[0] <= out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
