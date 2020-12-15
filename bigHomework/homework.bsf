@@ -142,21 +142,6 @@ applicable agreement for further details.
 		"B\"0110\""
 		""
 	)
-	(parameter
-		"s7"
-		"B\"0111\""
-		""
-	)
-	(parameter
-		"s8"
-		"B\"1000\""
-		""
-	)
-	(parameter
-		"s9"
-		"B\"1001\""
-		""
-	)
 	(drawing
 		(rectangle (rect 16 16 152 144)(line_width 1))
 	)

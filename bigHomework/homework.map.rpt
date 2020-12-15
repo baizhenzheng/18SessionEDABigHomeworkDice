@@ -1,5 +1,5 @@
 Analysis & Synthesis report for homework
-Sat Dec 05 16:08:50 2020
+Tue Dec 15 15:15:08 2020
 Quartus II Version 8.0 Build 215 05/29/2008 SJ Full Version
 
 
@@ -12,19 +12,17 @@ Quartus II Version 8.0 Build 215 05/29/2008 SJ Full Version
   4. Analysis & Synthesis Source Files Read
   5. Analysis & Synthesis Resource Usage Summary
   6. Analysis & Synthesis Resource Utilization by Entity
-  7. State Machine - |Block1|homework:inst|state1
-  8. State Machine - |Block1|homework:inst|state
-  9. Registers Removed During Synthesis
- 10. Removed Registers Triggering Further Register Optimizations
- 11. General Register Statistics
- 12. Inverted Register Statistics
- 13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Parameter Settings for User Entity Instance: led:inst21
- 15. Parameter Settings for User Entity Instance: homework:inst
- 16. Parameter Settings for Inferred Entity Instance: flag:inst9|lpm_divide:Mod0
- 17. Parameter Settings for Inferred Entity Instance: flag:inst19|lpm_divide:Mod0
- 18. Analysis & Synthesis Messages
- 19. Analysis & Synthesis Suppressed Messages
+  7. State Machine - |Block1|homework:inst|state
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: led:inst21
+ 13. Parameter Settings for User Entity Instance: homework:inst
+ 14. Parameter Settings for Inferred Entity Instance: flag:inst9|lpm_divide:Mod0
+ 15. Parameter Settings for Inferred Entity Instance: flag:inst19|lpm_divide:Mod0
+ 16. Analysis & Synthesis Messages
+ 17. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -50,15 +48,15 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +------------------------------------+------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Dec 05 16:08:50 2020    ;
+; Analysis & Synthesis Status        ; Successful - Tue Dec 15 15:15:08 2020    ;
 ; Quartus II Version                 ; 8.0 Build 215 05/29/2008 SJ Full Version ;
 ; Revision Name                      ; homework                                 ;
 ; Top-level Entity Name              ; Block1                                   ;
 ; Family                             ; Cyclone II                               ;
-; Total logic elements               ; 255                                      ;
-;     Total combinational functions  ; 255                                      ;
-;     Dedicated logic registers      ; 147                                      ;
-; Total registers                    ; 147                                      ;
+; Total logic elements               ; 248                                      ;
+;     Total combinational functions  ; 248                                      ;
+;     Dedicated logic registers      ; 144                                      ;
+; Total registers                    ; 144                                      ;
 ; Total pins                         ; 68                                       ;
 ; Total virtual pins                 ; 0                                        ;
 ; Total memory bits                  ; 0                                        ;
@@ -173,27 +171,27 @@ applicable agreement for further details.
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 255   ;
+; Estimated Total logic elements              ; 248   ;
 ;                                             ;       ;
-; Total combinational functions               ; 255   ;
+; Total combinational functions               ; 248   ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 131   ;
-;     -- 3 input functions                    ; 41    ;
-;     -- <=2 input functions                  ; 83    ;
+;     -- 4 input functions                    ; 116   ;
+;     -- 3 input functions                    ; 50    ;
+;     -- <=2 input functions                  ; 82    ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 214   ;
+;     -- normal mode                          ; 207   ;
 ;     -- arithmetic mode                      ; 41    ;
 ;                                             ;       ;
-; Total registers                             ; 147   ;
-;     -- Dedicated logic registers            ; 147   ;
+; Total registers                             ; 144   ;
+;     -- Dedicated logic registers            ; 144   ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
 ; I/O pins                                    ; 68    ;
 ; Maximum fan-out node                        ; clkin ;
-; Maximum fan-out                             ; 52    ;
-; Total fan-out                               ; 1200  ;
-; Average fan-out                             ; 2.55  ;
+; Maximum fan-out                             ; 49    ;
+; Total fan-out                               ; 1158  ;
+; Average fan-out                             ; 2.52  ;
 +---------------------------------------------+-------+
 
 
@@ -202,7 +200,7 @@ applicable agreement for further details.
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                 ; Library Name ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------+--------------+
-; |Block1                                   ; 255 (0)           ; 147 (0)      ; 0           ; 0            ; 0       ; 0         ; 68   ; 0            ; |Block1                                                                                                             ; work         ;
+; |Block1                                   ; 248 (0)           ; 144 (0)      ; 0           ; 0            ; 0       ; 0         ; 68   ; 0            ; |Block1                                                                                                             ; work         ;
 ;    |calculator:inst11|                    ; 4 (4)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Block1|calculator:inst11                                                                                           ; work         ;
 ;    |fenpin100:inst1|                      ; 14 (14)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Block1|fenpin100:inst1                                                                                             ; work         ;
 ;    |fenpin100:inst2|                      ; 14 (14)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Block1|fenpin100:inst2                                                                                             ; work         ;
@@ -219,7 +217,7 @@ applicable agreement for further details.
 ;          |lpm_divide_15m:auto_generated|  ; 17 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Block1|flag:inst9|lpm_divide:Mod0|lpm_divide_15m:auto_generated                                                    ; work         ;
 ;             |sign_div_unsign_8kh:divider| ; 17 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Block1|flag:inst9|lpm_divide:Mod0|lpm_divide_15m:auto_generated|sign_div_unsign_8kh:divider                        ; work         ;
 ;                |alt_u_div_ive:divider|    ; 17 (17)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Block1|flag:inst9|lpm_divide:Mod0|lpm_divide_15m:auto_generated|sign_div_unsign_8kh:divider|alt_u_div_ive:divider  ; work         ;
-;    |homework:inst|                        ; 75 (75)           ; 39 (39)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Block1|homework:inst                                                                                               ; work         ;
+;    |homework:inst|                        ; 68 (68)           ; 36 (36)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Block1|homework:inst                                                                                               ; work         ;
 ;    |led:inst21|                           ; 20 (20)           ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Block1|led:inst21                                                                                                  ; work         ;
 ;    |qudou:inst16|                         ; 7 (7)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Block1|qudou:inst16                                                                                                ; work         ;
 ;    |qudou:inst17|                         ; 7 (7)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Block1|qudou:inst17                                                                                                ; work         ;
@@ -237,31 +235,19 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 
 Encoding Type:  One-Hot
-+-----------------------------------------------------------------------+
-; State Machine - |Block1|homework:inst|state1                          ;
-+-----------+-----------+-----------+-----------+-----------+-----------+
-; Name      ; state1.s9 ; state1.s8 ; state1.s7 ; state1.s6 ; state1.s5 ;
-+-----------+-----------+-----------+-----------+-----------+-----------+
-; state1.s5 ; 0         ; 0         ; 0         ; 0         ; 0         ;
-; state1.s6 ; 0         ; 0         ; 0         ; 1         ; 1         ;
-; state1.s7 ; 0         ; 0         ; 1         ; 0         ; 1         ;
-; state1.s8 ; 0         ; 1         ; 0         ; 0         ; 1         ;
-; state1.s9 ; 1         ; 0         ; 0         ; 0         ; 1         ;
-+-----------+-----------+-----------+-----------+-----------+-----------+
-
-
-Encoding Type:  One-Hot
-+-----------------------------------------------------------------+
-; State Machine - |Block1|homework:inst|state                     ;
-+----------+----------+----------+----------+----------+----------+
-; Name     ; state.s3 ; state.s2 ; state.s1 ; state.s0 ; state.s4 ;
-+----------+----------+----------+----------+----------+----------+
-; state.s0 ; 0        ; 0        ; 0        ; 0        ; 0        ;
-; state.s1 ; 0        ; 0        ; 1        ; 1        ; 0        ;
-; state.s2 ; 0        ; 1        ; 0        ; 1        ; 0        ;
-; state.s3 ; 1        ; 0        ; 0        ; 1        ; 0        ;
-; state.s4 ; 0        ; 0        ; 0        ; 1        ; 1        ;
-+----------+----------+----------+----------+----------+----------+
++---------------------------------------------------------------------------------------+
+; State Machine - |Block1|homework:inst|state                                           ;
++----------+----------+----------+----------+----------+----------+----------+----------+
+; Name     ; state.s6 ; state.s5 ; state.s4 ; state.s3 ; state.s2 ; state.s1 ; state.s0 ;
++----------+----------+----------+----------+----------+----------+----------+----------+
+; state.s0 ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ;
+; state.s1 ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 1        ;
+; state.s2 ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 1        ;
+; state.s3 ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 1        ;
+; state.s4 ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 1        ;
+; state.s5 ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; state.s6 ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
++----------+----------+----------+----------+----------+----------+----------+----------+
 
 
 +---------------------------------------------------------------------------------+
@@ -278,28 +264,16 @@ Encoding Type:  One-Hot
 ; yima:inst14|out[1..3]                  ; Merged with yima:inst14|out[6]         ;
 ; yima:inst18|out[1..3]                  ; Merged with yima:inst18|out[6]         ;
 ; homework:inst|win[2]                   ; Stuck at GND due to stuck port data_in ;
-; homework:inst|state1~218               ; Lost fanout                            ;
-; homework:inst|state1~219               ; Lost fanout                            ;
-; homework:inst|state1~220               ; Lost fanout                            ;
-; homework:inst|state1~221               ; Lost fanout                            ;
-; homework:inst|state1~222               ; Lost fanout                            ;
-; homework:inst|state~111                ; Lost fanout                            ;
-; homework:inst|state~112                ; Lost fanout                            ;
-; homework:inst|state~114                ; Lost fanout                            ;
-; homework:inst|state~115                ; Lost fanout                            ;
+; homework:inst|state~379                ; Lost fanout                            ;
+; homework:inst|state~380                ; Lost fanout                            ;
+; homework:inst|state~381                ; Lost fanout                            ;
+; homework:inst|state~382                ; Lost fanout                            ;
+; homework:inst|state~383                ; Lost fanout                            ;
+; homework:inst|state~384                ; Lost fanout                            ;
+; homework:inst|state~385                ; Lost fanout                            ;
 ; led:inst21|ledstate[4]                 ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 23 ;                                        ;
+; Total Number of Removed Registers = 21 ;                                        ;
 +----------------------------------------+----------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                               ;
-+----------------------+---------------------------+----------------------------------------+
-; Register name        ; Reason for Removal        ; Registers Removed due to This Register ;
-+----------------------+---------------------------+----------------------------------------+
-; homework:inst|win[2] ; Stuck at GND              ; led:inst21|ledstate[4]                 ;
-;                      ; due to stuck port data_in ;                                        ;
-+----------------------+---------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -307,9 +281,9 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 147   ;
+; Total registers                              ; 144   ;
 ; Number of registers using Synchronous Clear  ; 10    ;
-; Number of registers using Synchronous Load   ; 1     ;
+; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 4     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 36    ;
@@ -334,19 +308,18 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
 ; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |Block1|qudou:inst17|count[3]    ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |Block1|qudou:inst16|count[0]    ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |Block1|qudou:inst6|count[0]     ;
-; 32:1               ; 8 bits    ; 168 LEs       ; 48 LEs               ; 120 LEs                ; Yes        ; |Block1|led:inst21|led[4]        ;
-; 6:1                ; 5 bits    ; 20 LEs        ; 15 LEs               ; 5 LEs                  ; Yes        ; |Block1|led:inst21|ledstate[0]   ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |Block1|homework:inst|scorea1[3] ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |Block1|homework:inst|scorea2[1] ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |Block1|homework:inst|scoreb1[0] ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |Block1|homework:inst|scoreb2[3] ;
-; 10:1               ; 10 bits   ; 60 LEs        ; 10 LEs               ; 50 LEs                 ; Yes        ; |Block1|homework:inst|suma[4]    ;
-; 13:1               ; 3 bits    ; 24 LEs        ; 18 LEs               ; 6 LEs                  ; Yes        ; |Block1|homework:inst|win[2]     ;
-; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |Block1|homework:inst|state~22   ;
-; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |Block1|homework:inst|state~23   ;
-; 14:1               ; 2 bits    ; 18 LEs        ; 8 LEs                ; 10 LEs                 ; No         ; |Block1|homework:inst|state1~45  ;
-; 14:1               ; 2 bits    ; 18 LEs        ; 8 LEs                ; 10 LEs                 ; No         ; |Block1|homework:inst|state1~48  ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |Block1|qudou:inst6|count[2]     ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Block1|homework:inst|scorea1[3] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Block1|homework:inst|scorea2[2] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Block1|homework:inst|scoreb1[3] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Block1|homework:inst|scoreb2[0] ;
+; 32:1               ; 8 bits    ; 168 LEs       ; 48 LEs               ; 120 LEs                ; Yes        ; |Block1|led:inst21|led[2]        ;
+; 6:1                ; 5 bits    ; 20 LEs        ; 15 LEs               ; 5 LEs                  ; Yes        ; |Block1|led:inst21|ledstate[3]   ;
+; 9:1                ; 10 bits   ; 60 LEs        ; 10 LEs               ; 50 LEs                 ; Yes        ; |Block1|homework:inst|sumb[2]    ;
+; 12:1               ; 3 bits    ; 24 LEs        ; 18 LEs               ; 6 LEs                  ; Yes        ; |Block1|homework:inst|win[1]     ;
+; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; No         ; |Block1|homework:inst|state~60   ;
+; 14:1               ; 2 bits    ; 18 LEs        ; 8 LEs                ; 10 LEs                 ; No         ; |Block1|homework:inst|state~57   ;
+; 14:1               ; 2 bits    ; 18 LEs        ; 8 LEs                ; 10 LEs                 ; No         ; |Block1|homework:inst|state~58   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
 
 
@@ -374,9 +347,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; s4             ; 0100  ; Unsigned Binary                   ;
 ; s5             ; 0101  ; Unsigned Binary                   ;
 ; s6             ; 0110  ; Unsigned Binary                   ;
-; s7             ; 0111  ; Unsigned Binary                   ;
-; s8             ; 1000  ; Unsigned Binary                   ;
-; s9             ; 1001  ; Unsigned Binary                   ;
 +----------------+-------+-----------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -433,7 +403,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 8.0 Build 215 05/29/2008 SJ Full Version
-    Info: Processing started: Sat Dec 05 16:08:48 2020
+    Info: Processing started: Tue Dec 15 15:15:05 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off homework -c homework
 Warning: Ignored assignments for entity "Block1" -- entity does not exist in design
     Warning: Assignment of entity set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region" is ignored
@@ -503,34 +473,24 @@ Info: Duplicate registers merged to single register
     Info (13350): Duplicate register "yima:inst18|out[2]" merged to single register "yima:inst18|out[6]"
     Info (13350): Duplicate register "yima:inst18|out[1]" merged to single register "yima:inst18|out[6]"
 Warning (14130): Reduced register "homework:inst|win[2]" with stuck data_in port to stuck value GND
-Info: State machine "|Block1|homework:inst|state1" contains 5 states
-Info: State machine "|Block1|homework:inst|state" contains 5 states
-Info: Selected Auto state machine encoding method for state machine "|Block1|homework:inst|state1"
-Info: Encoding result for state machine "|Block1|homework:inst|state1"
-    Info: Completed encoding using 5 state bits
-        Info: Encoded state bit "homework:inst|state1.s9"
-        Info: Encoded state bit "homework:inst|state1.s8"
-        Info: Encoded state bit "homework:inst|state1.s7"
-        Info: Encoded state bit "homework:inst|state1.s6"
-        Info: Encoded state bit "homework:inst|state1.s5"
-    Info: State "|Block1|homework:inst|state1.s5" uses code string "00000"
-    Info: State "|Block1|homework:inst|state1.s6" uses code string "00011"
-    Info: State "|Block1|homework:inst|state1.s7" uses code string "00101"
-    Info: State "|Block1|homework:inst|state1.s8" uses code string "01001"
-    Info: State "|Block1|homework:inst|state1.s9" uses code string "10001"
+Info: State machine "|Block1|homework:inst|state" contains 7 states
 Info: Selected Auto state machine encoding method for state machine "|Block1|homework:inst|state"
 Info: Encoding result for state machine "|Block1|homework:inst|state"
-    Info: Completed encoding using 5 state bits
+    Info: Completed encoding using 7 state bits
+        Info: Encoded state bit "homework:inst|state.s6"
+        Info: Encoded state bit "homework:inst|state.s5"
+        Info: Encoded state bit "homework:inst|state.s4"
         Info: Encoded state bit "homework:inst|state.s3"
         Info: Encoded state bit "homework:inst|state.s2"
         Info: Encoded state bit "homework:inst|state.s1"
         Info: Encoded state bit "homework:inst|state.s0"
-        Info: Encoded state bit "homework:inst|state.s4"
-    Info: State "|Block1|homework:inst|state.s0" uses code string "00000"
-    Info: State "|Block1|homework:inst|state.s1" uses code string "00110"
-    Info: State "|Block1|homework:inst|state.s2" uses code string "01010"
-    Info: State "|Block1|homework:inst|state.s3" uses code string "10010"
-    Info: State "|Block1|homework:inst|state.s4" uses code string "00011"
+    Info: State "|Block1|homework:inst|state.s0" uses code string "0000000"
+    Info: State "|Block1|homework:inst|state.s1" uses code string "0000011"
+    Info: State "|Block1|homework:inst|state.s2" uses code string "0000101"
+    Info: State "|Block1|homework:inst|state.s3" uses code string "0001001"
+    Info: State "|Block1|homework:inst|state.s4" uses code string "0010001"
+    Info: State "|Block1|homework:inst|state.s5" uses code string "0100001"
+    Info: State "|Block1|homework:inst|state.s6" uses code string "1000001"
 Info: Inferred 2 megafunctions from design logic
     Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "flag:inst9|Mod0"
     Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "flag:inst19|Mod0"
@@ -560,25 +520,23 @@ Warning: Output pins are stuck at VCC or GND
     Warning (13410): Pin "out7[5]" is stuck at GND
     Warning (13410): Pin "out7[4]" is stuck at GND
     Warning (13410): Pin "out7[0]" is stuck at VCC
-Info: 9 registers lost all their fanouts during netlist optimizations. The first 9 are displayed below.
-    Info: Register "homework:inst|state1~218" lost all its fanouts during netlist optimizations.
-    Info: Register "homework:inst|state1~219" lost all its fanouts during netlist optimizations.
-    Info: Register "homework:inst|state1~220" lost all its fanouts during netlist optimizations.
-    Info: Register "homework:inst|state1~221" lost all its fanouts during netlist optimizations.
-    Info: Register "homework:inst|state1~222" lost all its fanouts during netlist optimizations.
-    Info: Register "homework:inst|state~111" lost all its fanouts during netlist optimizations.
-    Info: Register "homework:inst|state~112" lost all its fanouts during netlist optimizations.
-    Info: Register "homework:inst|state~114" lost all its fanouts during netlist optimizations.
-    Info: Register "homework:inst|state~115" lost all its fanouts during netlist optimizations.
+Info: 7 registers lost all their fanouts during netlist optimizations. The first 7 are displayed below.
+    Info: Register "homework:inst|state~379" lost all its fanouts during netlist optimizations.
+    Info: Register "homework:inst|state~380" lost all its fanouts during netlist optimizations.
+    Info: Register "homework:inst|state~381" lost all its fanouts during netlist optimizations.
+    Info: Register "homework:inst|state~382" lost all its fanouts during netlist optimizations.
+    Info: Register "homework:inst|state~383" lost all its fanouts during netlist optimizations.
+    Info: Register "homework:inst|state~384" lost all its fanouts during netlist optimizations.
+    Info: Register "homework:inst|state~385" lost all its fanouts during netlist optimizations.
 Info: Generated suppressed messages file F:/EDA/home/bigHomework/bigHomework/homework.map.smsg
-Info: Implemented 341 device resources after synthesis - the final resource count might be different
+Info: Implemented 334 device resources after synthesis - the final resource count might be different
     Info: Implemented 4 input pins
     Info: Implemented 64 output pins
-    Info: Implemented 273 logic cells
+    Info: Implemented 266 logic cells
 Info: Quartus II Analysis & Synthesis was successful. 0 errors, 41 warnings
-    Info: Peak virtual memory: 221 megabytes
-    Info: Processing ended: Sat Dec 05 16:08:50 2020
-    Info: Elapsed time: 00:00:02
+    Info: Peak virtual memory: 222 megabytes
+    Info: Processing ended: Tue Dec 15 15:15:08 2020
+    Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:02
 
 

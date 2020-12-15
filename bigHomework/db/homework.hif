@@ -755,7 +755,7 @@ ON
 # case_sensitive
 # source_file
 homework.v
-21afae9a347418040aa8cf03ea82f17
+fb76a0d2361461a82fcc26ecb1b22aef
 7
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -802,18 +802,6 @@ s6
 0110
 PARAMETER_UNSIGNED_BIN
 DEF
-s7
-0111
-PARAMETER_UNSIGNED_BIN
-DEF
-s8
-1000
-PARAMETER_UNSIGNED_BIN
-DEF
-s9
-1001
-PARAMETER_UNSIGNED_BIN
-DEF
 }
 # hierarchies {
 homework:inst
@@ -829,7 +817,7 @@ db|homework.(9).cnf
 # case_insensitive
 # source_file
 Block1.bdf
-ec78b6bf597c791af1889d2b5aac329e
+763caa5ad6d697114d294feb92f4923
 25
 # internal_option {
 BLOCK_DESIGN_NAMING
